@@ -1,0 +1,255 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const processSteps = [
+  {
+    step: 1,
+    title: 'Hard Water Enters',
+    description: 'Hard water containing calcium and magnesium enters the softener tank through your home\'s water supply.',
+    icon: '⬇️',
+  },
+  {
+    step: 2,
+    title: 'Ion Exchange',
+    description: 'Water flows through a bed of resin beads charged with sodium or potassium ions. The resin attracts calcium and magnesium ions, releasing sodium ions in exchange.',
+    icon: '⚗️',
+  },
+  {
+    step: 3,
+    title: 'Soft Water Exits',
+    description: 'The now-softened water, free of hardness minerals but containing minimal sodium, flows to your home\'s fixtures and appliances.',
+    icon: '⬆️',
+  },
+  {
+    step: 4,
+    title: 'Regeneration',
+    description: 'When the resin becomes saturated with calcium and magnesium, the system flushes the beads with a salt brine solution, recharging them for the next cycle.',
+    icon: '🔄',
+  },
+];
+
+const benefits = [
+  {
+    title: 'Protected Appliances',
+    description: 'Water heaters, dishwashers, and washing machines last 30-50% longer without scale buildup.',
+    stat: '30-50%',
+    statLabel: 'Longer Lifespan',
+  },
+  {
+    title: 'Energy Savings',
+    description: 'Water heaters work more efficiently without scale insulation, saving up to 25% on water heating costs.',
+    stat: '25%',
+    statLabel: 'Energy Savings',
+  },
+  {
+    title: 'Soap Efficiency',
+    description: 'Soft water lathers better, reducing soap and detergent usage by up to 50%.',
+    stat: '50%',
+    statLabel: 'Less Soap Needed',
+  },
+];
+
+const faqs = [
+  {
+    question: 'Is softened water safe to drink?',
+    answer: 'Yes. The sodium added during softening is minimal—typically less than what\'s in a slice of bread. If you\'re on a sodium-restricted diet, potassium chloride can be used instead.',
+  },
+  {
+    question: 'How long does a water softener last?',
+    answer: 'With proper maintenance, a quality water softener lasts 15-20 years. The resin beads typically last 10-15 years before needing replacement.',
+  },
+  {
+    question: 'How much salt does a water softener use?',
+    answer: 'Usage varies based on water hardness and household size. A typical family uses 40-80 pounds of salt per month, costing $5-15 monthly.',
+  },
+  {
+    question: 'Will a water softener remove iron?',
+    answer: 'Standard water softeners remove small amounts of ferrous iron (clear water iron). For higher iron levels or ferric iron, additional filtration may be needed.',
+  },
+];
+---
+
+<Layout
+  title="How Water Softeners Work | Complete Guide for Raleigh Homeowners"
+  description="Learn exactly how water softeners remove hard water minerals through ion exchange. Understand the science, benefits, and whether a softener is right for your Raleigh home."
+>
+  <Navbar />
+
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-gradient-to-br from-primary to-secondary">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="max-w-3xl">
+        <span class="inline-block bg-white/20 text-white text-sm font-medium px-4 py-1 rounded-full mb-4">Water Softener Guide</span>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          How Do Water
+          <span class="text-accent">Softeners Work?</span>
+        </h1>
+
+        <p class="text-xl text-white/90 mb-8">
+          Understanding the ion exchange process that transforms hard water into soft water for your home.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/#contact" class="btn-primary bg-white text-primary hover:bg-gray-100">
+            Get Free Water Test
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What is Hard Water -->
+  <section class="section-padding bg-white">
+    <div class="max-w-4xl mx-auto container-padding">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">
+        Understanding
+        <span class="gradient-text">Hard Water</span>
+      </h2>
+
+      <div class="grid md:grid-cols-2 gap-8 items-center">
+        <div>
+          <p class="text-gray-600 mb-4">
+            Hard water contains high levels of dissolved minerals, primarily calcium and magnesium.
+            These minerals aren't harmful to your health, but they cause numerous problems in your home.
+          </p>
+
+          <p class="text-gray-600 mb-4">
+            Raleigh's municipal water averages <strong>7-10 grains per gallon (gpg)</strong> of hardness,
+            which falls into the "hard" category on the water hardness scale.
+          </p>
+
+          <h3 class="text-xl font-bold text-gray-900 mb-3">Water Hardness Scale</h3>
+          <ul class="space-y-2 text-gray-600">
+            <li class="flex justify-between"><span>Soft</span> <span>0-3 gpg</span></li>
+            <li class="flex justify-between"><span>Slightly Hard</span> <span>3-7 gpg</span></li>
+            <li class="flex justify-between font-semibold text-primary"><span>Moderately Hard</span> <span>7-10 gpg</span></li>
+            <li class="flex justify-between"><span>Hard</span> <span>10-15 gpg</span></li>
+            <li class="flex justify-between"><span>Very Hard</span> <span>15+ gpg</span></li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Signs of Hard Water</h3>
+          <div class="space-y-3">
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🍽️</span>
+              <span>Spotty dishes and glassware</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🚿</span>
+              <span>Soap scum on shower doors</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">💧</span>
+              <span>Dry skin and hair</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">🔧</span>
+              <span>Scale buildup on fixtures</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <span class="text-2xl">👕</span>
+              <span>Faded, stiff laundry</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- The Process -->
+  <section class="section-padding bg-gray-50">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          The Ion Exchange
+          <span class="gradient-text">Process</span>
+        </h2>
+        <p class="text-lg text-gray-600">
+          Water softeners use a fascinating chemical process called ion exchange to remove hardness minerals.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {processSteps.map((step) => (
+          <div class="relative">
+            <div class="bg-white rounded-2xl p-6 shadow-sm h-full">
+              <div class="flex items-center justify-between mb-4">
+                <div class="w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg">
+                  {step.step}
+                </div>
+                <div class="text-3xl">{step.icon}</div>
+              </div>
+              <h3 class="text-xl font-bold text-gray-900 mb-2">{step.title}</h3>
+              <p class="text-gray-600 text-sm">{step.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits Deep Dive -->
+  <section class="section-padding bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Real Benefits for Your
+          <span class="gradient-text">Home & Wallet</span>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {benefits.map((benefit) => (
+          <div class="bg-gradient-to-br from-primary/5 to-secondary/5 rounded-2xl p-8">
+            <div class="text-5xl font-bold text-primary mb-2">{benefit.stat}</div>
+            <div class="text-sm text-gray-500 mb-4">{benefit.statLabel}</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{benefit.title}</h3>
+            <p class="text-gray-600">{benefit.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section-padding bg-gray-50">
+    <div class="max-w-4xl mx-auto container-padding">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
+        Common Questions About
+        <span class="gradient-text">Water Softeners</span>
+      </h2>
+
+      <div class="space-y-4">
+        {faqs.map((faq) => (
+          <div class="bg-white rounded-xl p-6 shadow-sm">
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{faq.question}</h3>
+            <p class="text-gray-600">{faq.answer}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-primary">
+    <div class="max-w-4xl mx-auto container-padding text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        Is Hard Water Affecting Your Home?
+      </h2>
+
+      <p class="text-xl text-white/90 mb-8">
+        Get a free water hardness test and custom recommendation for your Raleigh home.
+      </p>
+
+      <a href="/#contact" class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+        Schedule Free Test
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

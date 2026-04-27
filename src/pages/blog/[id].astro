@@ -1,0 +1,82 @@
+---
+import { type CollectionEntry, getCollection, render } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+export async function getStaticPaths() {
+  const posts = await getCollection('blog');
+  return posts.map((post) => ({
+    params: { id: post.id },
+    props: { post },
+  }));
+}
+
+type Props = {
+  post: CollectionEntry<'blog'>;
+};
+
+const { post } = Astro.props;
+const { Content } = await render(post);
+---
+
+<Layout
+  title={post.data.title}
+  description={post.data.description}
+  type="article"
+>
+  <Navbar /
+
+  <article class="pt-32 pb-20">
+    <div class="max-w-3xl mx-auto container-padding">
+      <!-- Header -->
+      <header class="mb-12">
+        <div class="flex flex-wrap gap-2 mb-4">
+          {post.data.tags.map((tag) => (
+            <span class="text-sm font-medium text-primary bg-primary/10 px-3 py-1 rounded-full">
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          {post.data.title}
+        </h1>
+
+        <div class="flex items-center gap-4 text-gray-600">
+          <span>By {post.data.author}</span>
+          <span>•</span>
+          <time datetime={post.data.pubDate.toISOString()}>
+            {post.data.pubDate.toLocaleDateString('en-US', {
+              year: 'numeric',
+              month: 'long',
+              day: 'numeric'
+            })}
+          </time>
+        </div>
+      </header>
+
+      <!-- Content -->
+      <div class="prose prose-lg prose-slate max-w-none">
+        <Content />
+      </div>
+
+      <!-- CTA -->
+      <div class="mt-16 bg-gradient-to-br from-primary to-secondary rounded-2xl p-8 text-center">
+        <h2 class="text-2xl font-bold text-white mb-4">
+          Ready to Improve Your Water Quality?
+        </h2>
+
+        <p class="text-white/90 mb-6">
+          Schedule your free water test today and discover the perfect solution for your home.
+        </p>
+
+        <a href="/" class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+          Get Free Water Test
+        </a>
+      </div>
+    </div>
+  </article>
+
+  <Footer />
+</Layout>

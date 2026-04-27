@@ -1,0 +1,237 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const costs = [
+  { item: 'Entry-Level Softener', priceRange: '$400 - $800', installed: '$1,200 - $1,800', description: 'Basic timer-based, 32,000 grains' },
+  { item: 'Mid-Range Softener', priceRange: '$800 - $1,500', installed: '$1,800 - $2,500', description: 'Digital controls, 48,000 grains, demand regeneration' },
+  { item: 'High-End Softener', priceRange: '$1,500 - $3,000', installed: '$2,500 - $4,000', description: 'Smart features, 80,000+ grains, WiFi connected' },
+  { item: 'Twin-Tank System', priceRange: '$2,000 - $4,000', installed: '$3,500 - $5,500', description: 'Continuous soft water, no regeneration downtime' },
+];
+
+const yearlySavings = [
+  { category: 'Soap & Detergent', savings: 200, description: 'Less product needed for cleaning' },
+  { category: 'Energy Bills', savings: 180, description: 'Water heater efficiency improvement' },
+  { category: 'Appliance Life', savings: 300, description: 'Extended lifespan of water-using appliances' },
+  { category: 'Plumbing Repairs', savings: 150, description: 'Reduced scale buildup in pipes' },
+];
+
+const breakEvenYears = 3.5;
+---
+
+<Layout
+  title="Water Softener Cost & ROI | Investment Guide for Raleigh Homes"
+  description="Complete breakdown of water softener costs, installation prices, and return on investment. See how much you can save with a water softener in Raleigh."
+>
+  <Navbar />
+
+  <section class="pt-32 pb-20 bg-gradient-to-br from-primary to-secondary">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="max-w-3xl">
+        <span class="inline-block bg-white/20 text-white text-sm font-medium px-4 py-1 rounded-full mb-4">Cost Guide</span>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          Water Softener
+          <span class="text-accent">Cost & ROI</span>
+        </h1>
+
+        <p class="text-xl text-white/90 mb-8">
+          Understanding the true cost of water softeners and how they pay for themselves through savings.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cost Breakdown -->
+  <section class="section-padding bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Water Softener
+          <span class="gradient-text">Pricing</span>
+        </h2>
+        <p class="text-lg text-gray-600">
+          Equipment costs vary by capacity and features. Installation typically adds $800-$1,500.
+        </p>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="text-left p-4 font-semibold">System Type</th>
+              <th class="text-left p-4 font-semibold">Equipment Only</th>
+              <th class="text-left p-4 font-semibold">Installed</th>
+              <th class="text-left p-4 font-semibold">Features</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y">
+            {costs.map((cost) => (
+              <tr class="hover:bg-gray-50">
+                <td class="p-4 font-medium">{cost.item}</td>
+                <td class="p-4">{cost.priceRange}</td>
+                <td class="p-4 text-primary font-semibold">{cost.installed}</td>
+                <td class="p-4 text-gray-600">{cost.description}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-8 p-6 bg-yellow-50 rounded-xl border border-yellow-200">
+        <p class="text-yellow-800">
+          <strong>💡 Pro Tip: </strong>
+          The lowest price isn't always the best value. Consider warranty length, local service availability,
+          and the cost of replacement parts when comparing quotes.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ongoing Costs -->
+  <section class="section-padding bg-gray-50">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">
+            Ongoing
+            <span class="gradient-text">Operating Costs</span>
+          </h2>
+
+          <div class="space-y-6">
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <h3 class="font-bold text-gray-900 mb-2">Salt</h3>
+              <p class="text-gray-600 mb-2">$5-15/month depending on water hardness and usage</p>
+              <p class="text-sm text-gray-500">40-80 lbs per month for average household</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <h3 class="font-bold text-gray-900 mb-2">Water Usage</h3>
+              <p class="text-gray-600 mb-2">50-150 gallons per regeneration cycle</cp>
+              <p class="text-sm text-gray-500">$3-10/month added to water bill</p>
+            </div>
+
+            <div class="bg-white rounded-xl p-6 shadow-sm">
+              <h3 class="font-bold text-gray-900 mb-2">Maintenance</h3>
+              <p class="text-gray-600 mb-2">$100-200/year for filter changes and service</p>
+              <p class="text-sm text-gray-500">Or $0 with our lifetime warranty packages</p>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <h2 class="text-3xl font-bold text-gray-900 mb-6">
+            Annual
+            <span class="gradient-text">Savings</span>
+          </h2>
+
+          <div class="space-y-4">
+            {yearlySavings.map((saving) => (
+              <div class="flex items-center justify-between bg-white rounded-xl p-4 shadow-sm">
+                <div>
+                  <div class="font-semibold text-gray-900">{saving.category}</div>
+                  <div class="text-sm text-gray-500">{saving.description}</div>
+                </div>
+                <div class="text-2xl font-bold text-green-600">+${saving.savings}</div>
+              </div>
+            ))}
+
+            <div class="bg-primary rounded-xl p-4 text-white">
+              <div class="flex items-center justify-between">
+                <div class="font-bold text-lg">Total Annual Savings</div>
+                <div class="text-3xl font-bold">$830</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ROI Calculator -->
+  <section class="section-padding bg-white">
+    <div class="max-w-4xl mx-auto container-padding">
+      <div class="bg-gradient-to-br from-primary to-secondary rounded-2xl p-8 md:p-12 text-center">
+        <h2 class="text-3xl font-bold text-white mb-4">
+          Return on Investment
+        </h2>
+
+        <p class="text-xl text-white/90 mb-8">
+          A mid-range water softener pays for itself in approximately <strong>3.5 years</strong>
+          through direct savings on energy, soap, and appliance replacement.
+        </p>
+
+        <div class="grid md:grid-cols-3 gap-6 mb-8">
+          <div class="bg-white/10 rounded-xl p-6 backdrop-blur">
+            <div class="text-4xl font-bold text-white mb-1">$2,100</div>
+            <div class="text-white/70">Average System Cost</div>
+          </div>
+
+          <div class="bg-white/10 rounded-xl p-6 backdrop-blur">
+            <div class="text-4xl font-bold text-white mb-1">$830</div>
+            <div class="text-white/70">Annual Savings</div>
+          </div>
+
+          <div class="bg-white/10 rounded-xl p-6 backdrop-blur">
+            <div class="text-4xl font-bold text-accent mb-1">2.5 years</div>
+            <div class="text-white/70">Payback Period</div>
+          </div>
+        </div>
+
+        <p class="text-white/80 text-sm">
+          *Over 15 years, total savings exceed $12,000 compared to not having a water softener.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Financing -->
+  <section class="section-padding bg-gray-50">
+    <div class="max-w-4xl mx-auto container-padding">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-8">
+        Flexible
+        <span class="gradient-text">Financing Options</span>
+      </h2>
+
+      <div class="grid md:grid-cols-3 gap-6">
+        <div class="bg-white rounded-xl p-6 shadow-sm text-center">
+          <div class="text-3xl font-bold text-primary mb-2">0%</div>
+          <div class="font-semibold mb-1">APR for 24 Months</div>
+          <div class="text-sm text-gray-600">No interest, no catch</div>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-sm text-center">
+          <div class="text-3xl font-bold text-primary mb-2">$79</div>
+          <div class="font-semibold mb-1">Monthly Payment</div>
+          <div class="text-sm text-gray-600">60-month term available</div>
+        </div>
+
+        <div class="bg-white rounded-xl p-6 shadow-sm text-center">
+          <div class="text-3xl font-bold text-primary mb-2">$0</div>
+          <div class="font-semibold mb-1">Down Payment</div>
+          <div class="text-sm text-gray-600">100% financing available</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-white">
+    <div class="max-w-4xl mx-auto container-padding text-center">
+      <h2 class="text-3xl font-bold text-gray-900 mb-4">
+        Get Your Custom Quote
+      </h2>
+
+      <p class="text-xl text-gray-600 mb-8">
+        Every home is different. Get a personalized recommendation and pricing for your specific water needs.
+      </p>
+
+      <a href="/#contact" class="btn-primary">
+        Schedule Free Water Test
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

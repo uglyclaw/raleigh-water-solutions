@@ -1,0 +1,128 @@
+---
+import '../styles/global.css';
+
+export interface Props {
+  title?: string;
+  description?: string;
+  image?: string;
+  canonicalURL?: string;
+  type?: 'website' | 'article';
+}
+
+const {
+  title = 'Raleigh Water Solutions | Water Filtration & Softening in NC',
+  description = 'Trusted water filtration & softening services in Raleigh, Durham & the Triangle. Free water testing, professional installation, lifetime warranty. Get clean water today!',
+  image = '/images/og-image.jpg',
+  canonicalURL = Astro.url.href,
+  type = 'website'
+} = Astro.props;
+
+const siteName = 'Raleigh Water Solutions';
+const fullTitle = title.includes(siteName) ? title : `${title} | ${siteName}`;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+
+  <!-- Primary Meta Tags -->
+  <title>{fullTitle}</title>
+  <meta name="title" content={fullTitle} />
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalURL} />
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content={type} />
+  <meta property="og:url" content={canonicalURL} />
+  <meta property="og:title" content={fullTitle} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={new URL(image, Astro.site || 'https://raleighwatersolutions.com')} />
+  <meta property="og:site_name" content={siteName} />
+  <meta property="og:locale" content="en_US" />
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content={canonicalURL} />
+  <meta property="twitter:title" content={fullTitle} />
+  <meta property="twitter:description" content={description} />
+  <meta property="twitter:image" content={new URL(image, Astro.site || 'https://raleighwatersolutions.com')} />
+
+  <!-- Local Business Schema -->
+  <script type="application/ld+json">
+    {`
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Raleigh Water Solutions",
+        "description": "Professional water filtration and softening services in Raleigh, NC",
+        "url": "https://raleighwatersolutions.com",
+        "telephone": "+1-919-555-0142",
+        "email": "hello@raleighwatersolutions.com",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "1234 Falls of Neuse Rd",
+          "addressLocality": "Raleigh",
+          "addressRegion": "NC",
+          "postalCode": "27615",
+          "addressCountry": "US"
+        },
+        "geo": {
+          "@type": "GeoCoordinates",
+          "latitude": "35.8439",
+          "longitude": "-78.6456"
+        },
+        "openingHours": [
+          "Mo-Fr 08:00-18:00",
+          "Sa 09:00-14:00"
+        ],
+        "priceRange": "$$",
+        "areaServed": [
+          "Raleigh, NC",
+          "Durham, NC",
+          "Cary, NC",
+          "Apex, NC",
+          "Chapel Hill, NC"
+        ],
+        "hasOfferCatalog": {
+          "@type": "OfferCatalog",
+          "name": "Water Treatment Services",
+          "itemListElement": [
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Water Softener Installation"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Reverse Osmosis Systems"
+              }
+            },
+            {
+              "@type": "Offer",
+              "itemOffered": {
+                "@type": "Service",
+                "name": "Whole House Water Filtration"
+              }
+            }
+          ]
+        }
+      }
+    `}
+  </script>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body class="antialiased bg-white">
+  <slot />
+</body>
+</html>

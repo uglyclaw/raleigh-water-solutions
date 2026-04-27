@@ -1,0 +1,164 @@
+---
+const contactInfo = [
+  {
+    icon: '📍',
+    label: 'Address',
+    value: '1234 Falls of Neuse Rd\nRaleigh, NC 27615',
+  },
+  {
+    icon: '📞',
+    label: 'Phone',
+    value: '(919) 555-0142',
+    href: 'tel:+19195550142',
+  },
+  {
+    icon: '✉️',
+    label: 'Email',
+    value: 'hello@raleighwatersolutions.com',
+    href: 'mailto:hello@raleighwatersolutions.com',
+  },
+  {
+    icon: '🕐',
+    label: 'Hours',
+    value: 'Mon-Fri: 8am-6pm\nSat: 9am-2pm',
+  },
+];
+
+const services = [
+  'Free Water Test',
+  'Water Softener',
+  'Drinking Water System',
+  'Whole House Filtration',
+  'Well Water Treatment',
+  'Other',
+];
+---
+
+<section id="contact" class="section-padding bg-gray-50">
+  <div class="max-w-7xl mx-auto container-padding">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3">Contact Us</span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        Get Your
+        <span class="gradient-text">Free Water Test</span>
+      </h2>
+      <p class="text-lg text-gray-600">
+        Schedule a complimentary water analysis with our experts. We'll test your water, explain your options, and help you choose the right solution - no pressure, no obligation.
+      </p>
+    </div>
+
+    <div class="grid lg:grid-cols-5 gap-12">
+      <!-- Left - Contact Info -->
+      <div class="lg:col-span-2">
+        <div class="space-y-6">
+          {contactInfo.map((info) => (
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-2xl flex-shrink-0">
+                {info.icon}
+              </div>
+              <div>
+                <div class="font-semibold text-gray-900 mb-1">{info.label}</div>
+                {info.href ? (
+                  <a href={info.href} class="text-gray-600 hover:text-primary transition-colors whitespace-pre-line">
+                    {info.value}
+                  </a>
+                ) : (
+                  <div class="text-gray-600 whitespace-pre-line">{info.value}</div>
+                )}
+              </div>
+            </div>
+          ))}
+        </div>
+
+        <!-- Service Areas -->
+        <div class="mt-10">
+          <h3 class="font-semibold text-gray-900 mb-4">Service Areas</h3>
+          <div class="flex flex-wrap gap-2">
+            {['Raleigh', 'Durham', 'Cary', 'Apex', 'Chapel Hill', 'Morrisville', 'Wake Forest', 'Garner'].map((area) => (
+              <span class="px-3 py-1 bg-white rounded-full text-sm text-gray-600 border border-gray-200">{area}</span>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Right - Contact Form -->
+      <div class="lg:col-span-3">
+        <form
+          class="bg-white rounded-2xl p-8 shadow-lg"
+          action="https://formspree.io/f/YOUR_FORM_ID"
+          method="POST"
+        >
+          <div class="grid md:grid-cols-2 gap-6 mb-6">
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Full Name *</label>
+              <input
+                type="text"
+                name="name"
+                required
+                placeholder="John Smith"
+                class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors"
+              />
+            </div>
+            <div>
+              <label class="block text-sm font-medium text-gray-700 mb-2">Phone Number *</label>
+              <input
+                type="tel"
+                name="phone"
+                required
+                placeholder="(919) 555-0123"
+                class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors"
+              />
+            </div>
+          </div>
+
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Email Address *</label>
+            <input
+              type="email"
+              name="email"
+              required
+              placeholder="john@example.com"
+              class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors"
+            />
+          </div>
+
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Service Interested In</label>
+            <select
+              name="service"
+              class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors bg-white"
+            >
+              {services.map((service) => (
+                <option value={service}>{service}</option>
+              ))}
+            </select>
+          </div>
+
+          <div class="mb-6">
+            <label class="block text-sm font-medium text-gray-700 mb-2">Message (Optional)</label>
+            <textarea
+              name="message"
+              rows={4}
+              placeholder="Tell us about your water concerns..."
+              class="w-full px-4 py-3 border border-gray-200 rounded-lg focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none transition-colors resize-none"
+            ></textarea>
+          </div>
+
+          <button
+            type="submit"
+            class="btn-primary w-full"
+          >
+            Schedule Free Water Test
+            <svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+            </svg>
+          </button>
+
+          <p class="text-center text-sm text-gray-500 mt-4">
+            We'll never share your information. Unsubscribe anytime.
+          </p>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>

@@ -1,0 +1,102 @@
+---
+const faqs = [
+  {
+    question: 'How does a whole home water filtration system work?',
+    answer: 'A whole home system treats water at the point where it enters your house. It typically includes a pre-filter to remove sediment, a carbon filter to remove chlorine and chemicals, and a water softener to remove hardness minerals. Every tap in your home delivers clean, filtered water.',
+  },
+  {
+    question: 'What contaminants do your systems remove?',
+    answer: 'Our systems are designed to remove chlorine, chloramines, sediment, rust, heavy metals like lead and mercury, pesticides, herbicides, and hardness minerals. Reverse osmosis systems also remove fluoride, nitrates, and other dissolved solids.',
+  },
+  {
+    question: 'How often do filters need to be replaced?',
+    answer: 'Pre-filters typically need replacement every 6-12 months. Carbon filters last about 12 months. RO membranes can last 2-3 years. We offer convenient filter replacement reminders and can handle the maintenance for you.',
+  },
+  {
+    question: 'What\'s included in the free water test?',
+    answer: 'Our certified technician will test for hardness, chlorine, pH, total dissolved solids (TDS), iron, and other common contaminants found in Triangle water. We\'ll explain your results and recommend solutions based on your specific water quality.',
+  },
+  {
+    question: 'How long does installation take?',
+    answer: 'Most installations are completed in 2-4 hours. We work around your schedule and make sure everything is working perfectly before we leave. No mess, no hassle.',
+  },
+  {
+    question: 'Do you offer financing?',
+    answer: 'Yes! We offer 0% APR financing for 24 months through our lending partners. We also have various payment plans to fit different budgets. Clean water shouldn\'t wait.',
+  },
+  {
+    question: 'What areas do you service?',
+    answer: 'We serve Raleigh, Durham, Cary, Apex, Chapel Hill, Morrisville, Wake Forest, Garner, and surrounding areas in the Triangle.',
+  },
+  {
+    question: 'Is the lifetime warranty really for life?',
+    answer: 'Yes! As long as you own your home and keep up with basic maintenance, your system is covered. This includes parts and labor. We stand behind our products because we know they work.',
+  },
+];
+---
+
+<section id="faq" class="section-padding bg-white">
+  <div class="max-w-4xl mx-auto container-padding">
+    <div class="text-center mb-16">
+      <span class="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3">FAQ</span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        Frequently Asked
+        <span class="gradient-text">Questions</span>
+      </h2>
+      <p class="text-lg text-gray-600">
+        Got questions? We've got answers. Here are some of the most common things our customers ask.
+      </p>
+    </div>
+
+    <div class="space-y-4">
+      {faqs.map((faq, index) => (
+        <div class="faq-item border border-gray-200 rounded-xl overflow-hidden hover:border-primary/50 transition-colors">
+          <button
+            class="faq-toggle w-full flex items-center justify-between p-6 text-left bg-white hover:bg-gray-50 transition-colors"
+            data-index={index}
+          >
+            <span class="font-semibold text-gray-900 pr-4">{faq.question}</span>
+            <span class="faq-icon flex-shrink-0 w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary transition-transform">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+              </svg>
+            </span>
+          </button>
+          <div class="faq-content hidden px-6 pb-6">
+            <p class="text-gray-600 leading-relaxed">{faq.answer}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+
+    <!-- Still have questions -->
+    <div class="mt-12 text-center">
+      <p class="text-gray-600 mb-4">Still have questions?</p>
+      <a href="#contact" class="btn-primary">
+        Contact Us
+      </a>
+    </div>
+  </div>
+</section>
+
+<script>
+  document.querySelectorAll('.faq-toggle').forEach(button => {
+    button.addEventListener('click', () => {
+      const item = button.closest('.faq-item');
+      const content = item?.querySelector('.faq-content');
+      const icon = button.querySelector('.faq-icon');
+
+      // Close others
+      document.querySelectorAll('.faq-item').forEach(otherItem => {
+        if (otherItem !== item) {
+          otherItem.querySelector('.faq-content')?.classList.add('hidden');
+          otherItem.querySelector('.faq-icon')?.classList.remove('rotate-180');
+        }
+      });
+
+      // Toggle current
+      content?.classList.toggle('hidden');
+      icon?.classList.toggle('rotate-180');
+    });
+  });
+</script>

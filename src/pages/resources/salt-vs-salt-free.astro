@@ -1,0 +1,267 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const comparisonData = [
+  {
+    feature: 'How It Works',
+    saltBased: 'Ion exchange removes calcium/magnesium',
+    saltFree: 'Template assisted crystallization (TAC)',
+  },
+  {
+    feature: 'Removes Hardness',
+    saltBased: 'Yes - completely eliminates hardness',
+    saltFree: 'No - conditions water to prevent scale',
+  },
+  {
+    feature: 'Soap Lathering',
+    saltBased: 'Excellent - true soft water feel',
+    saltFree: 'Limited - doesn\'t improve soap performance',
+  },
+  {
+    feature: 'Feel on Skin',
+    saltBased: 'Slick, soft feeling',
+    saltFree: 'Same as untreated water',
+  },
+  {
+    feature: 'Maintenance',
+    saltBased: 'Add salt every 6-8 weeks',
+    saltFree: 'Replace media every 3-5 years',
+  },
+  {
+    feature: 'Operating Cost',
+    saltBased: '$10-20/month for salt',
+    saltFree: '$0 monthly costs',
+  },
+  {
+    feature: 'Initial Cost',
+    saltBased: '$1,200 - $2,500',
+    saltFree: '$1,000 - $2,000',
+  },
+  {
+    feature: 'Water Efficiency',
+    saltBased: 'Uses water for regeneration',
+    saltFree: 'No water waste',
+  },
+  {
+    feature: 'Best For',
+    saltBased: 'Hard water areas (7+ gpg)',
+    saltFree: 'Light to moderate hardness (3-7 gpg)',
+  },
+];
+
+const prosCons = {
+  saltBased: {
+    pros: [
+      'Actually removes hardness minerals',
+      'Dramatically reduces soap usage',
+      'Eliminates scale buildup completely',
+      'Better for very hard water',
+      'Proven technology with decades of use',
+    ],
+    cons: [
+      'Requires regular salt purchases',
+      'Needs electrical connection',
+      'Produces wastewater during regeneration',
+      'Higher maintenance requirements',
+      'Adds small amount of sodium to water',
+    ],
+  },
+  saltFree: {
+    pros: [
+      'No salt to buy or add',
+      'No wastewater produced',
+      'Lower ongoing costs',
+      'Often easier to install',
+      'Better for sodium-restricted diets',
+    ],
+    cons: [
+      'Doesn\'t truly soften water',
+      'Limited effectiveness on very hard water',
+      'Won\'t improve soap performance',
+      'Doesn\'t provide "soft water feel"',
+      'Media needs periodic replacement',
+    ],
+  },
+};
+---
+
+<Layout
+  title="Salt vs Salt-Free Water Softeners | Which Is Best for Your Home?"
+  description="Compare salt-based and salt-free water conditioners. Learn the differences in performance, cost, maintenance, and which type is right for your Raleigh home's water."
+>
+  <Navbar />
+
+  <section class="pt-32 pb-20 bg-gradient-to-br from-primary to-secondary">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="max-w-3xl">
+        <span class="inline-block bg-white/20 text-white text-sm font-medium px-4 py-1 rounded-full mb-4">Comparison Guide</span>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          Salt vs Salt-Free
+          <span class="text-accent">Water Softeners</span>
+        </h1>
+
+        <p class="text-xl text-white/90 mb-8">
+          Understanding the key differences to choose the right solution for your Raleigh home.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Quick Verdict -->
+  <section class="py-12 bg-white border-b">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="bg-yellow-50 rounded-2xl p-8 border-2 border-yellow-200">
+        <h2 class="text-2xl font-bold text-gray-900 mb-4">Our Recommendation for Raleigh</h2>
+        <p class="text-gray-700 mb-4">
+          <strong>For most Raleigh homes,</strong> we recommend a traditional salt-based ion exchange softener.
+          Raleigh's water averages 7-10 grains per gallon—firmly in the "hard" category where salt-free
+          conditioners struggle to deliver meaningful results.
+        </p>
+
+        <p class="text-gray-700">
+          Salt-free systems are better suited for areas with light to moderate hardness (under 7 gpg).
+          If you're concerned about sodium intake, consider a reverse osmosis system for drinking water
+          alongside your salt-based softener.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="section-padding bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <h2 class="text-3xl font-bold text-center text-gray-900 mb-12">
+        Side-by-Side
+        <span class="gradient-text">Comparison</span>
+      </h2>
+
+      <div class="overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="text-left p-4 font-semibold">Feature</th>
+              <th class="text-left p-4 font-semibold text-primary">Salt-Based Softener</th>
+              <th class="text-left p-4 font-semibold text-secondary">Salt-Free Conditioner</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y">
+            {comparisonData.map((row) => (
+              <tr class="hover:bg-gray-50">
+                <td class="p-4 font-medium text-gray-900">{row.feature}</td>
+                <td class="p-4 text-gray-600">{row.saltBased}</td>
+                <td class="p-4 text-gray-600">{row.saltFree}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pros & Cons -->
+  <section class="section-padding bg-gray-50">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid md:grid-cols-2 gap-8">
+        <!-- Salt-Based -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm">
+          <h2 class="text-2xl font-bold text-primary mb-6">Salt-Based Softener</h2>
+
+          <div class="mb-6">
+            <h3 class="font-semibold text-green-600 mb-3 flex items-center gap-2">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Pros
+            </h3>
+            <ul class="space-y-2">
+              {prosCons.saltBased.pros.map((pro) => (
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500">✓</span>
+                  <span class="text-gray-600">{pro}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-red-600 mb-3 flex items-center gap-2">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+              </svg>
+              Cons
+            </h3>
+            <ul class="space-y-2">
+              {prosCons.saltBased.cons.map((con) => (
+                <li class="flex items-start gap-2">
+                  <span class="text-red-500">×</span>
+                  <span class="text-gray-600">{con}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+
+        <!-- Salt-Free -->
+        <div class="bg-white rounded-2xl p-8 shadow-sm">
+          <h2 class="text-2xl font-bold text-secondary mb-6">Salt-Free Conditioner</h2>
+
+          <div class="mb-6">
+            <h3 class="font-semibold text-green-600 mb-3 flex items-center gap-2">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              Pros
+            </h3>
+            <ul class="space-y-2">
+              {prosCons.saltFree.pros.map((pro) => (
+                <li class="flex items-start gap-2">
+                  <span class="text-green-500">✓</span>
+                  <span class="text-gray-600">{pro}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <h3 class="font-semibold text-red-600 mb-3 flex items-center gap-2">
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clip-rule="evenodd"></path>
+              </svg>
+              Cons
+            </h3>
+            <ul class="space-y-2">
+              {prosCons.saltFree.cons.map((con) => (
+                <li class="flex items-start gap-2">
+                  <span class="text-red-500">×</span>
+                  <span class="text-gray-600">{con}</span>
+                </li>
+              ))}
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-primary">
+    <div class="max-w-4xl mx-auto container-padding text-center">
+      <h2 class="text-3xl font-bold text-white mb-4">
+        Still Not Sure Which Is Right for You?
+      </h2>
+
+      <p class="text-xl text-white/90 mb-8">
+        Get a free water test and personalized recommendation based on your home's specific water quality.
+      </p>
+
+      <a href="/#contact" class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+        Schedule Free Water Test
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>

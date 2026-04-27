@@ -1,0 +1,100 @@
+---
+const stats = [
+  { number: '2,000+', label: 'Water Tests Conducted' },
+  { number: '9', label: 'Years Serving Raleigh' },
+  { number: '90%', label: 'Referral Rate' },
+  { number: '4.9', label: 'Average Rating' },
+];
+---
+
+<section id="about" class="py-24 bg-white">
+  <!-- Section Header - Full Width -->
+  <div class="max-w-7xl mx-auto container-padding mb-16">
+    <div class="text-center max-w-3xl mx-auto">
+      <span class="inline-block bg-primary/10 text-primary font-semibold text-sm uppercase tracking-wider px-4 py-1 rounded-full mb-4">Our Story</span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        A Local Company Built on
+        <span class="gradient-text">Trust & Results</span>
+      </h2>
+    </div>
+  </div>
+
+  <!-- Main Content - Side by Side without card wrapper -->
+  <div class="max-w-7xl mx-auto container-padding">
+    <div class="grid lg:grid-cols-2 gap-16 items-center">
+      <!-- Left - Large Image/Graphic -->
+      <div class="relative">
+        <div class="rounded-3xl overflow-hidden shadow-2xl">
+          <div class="aspect-[4/3] bg-gradient-to-br from-primary via-secondary to-accent flex items-center justify-center text-white">
+            <div class="text-center px-8">
+              <div class="text-9xl mb-6">🏠</div>
+              <div class="text-3xl md:text-4xl font-bold">Raleigh Water Solutions</div>
+              <div class="text-xl text-white/80 mt-2">Trusted Since 2015</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Floating Testimonial -->
+        <div class="absolute -bottom-8 left-8 right-8 bg-white rounded-2xl shadow-xl p-6 border border-gray-100">
+          <div class="flex items-center gap-4">
+            <div class="flex -space-x-3">
+              <div class="w-12 h-12 rounded-full bg-primary flex items-center justify-center text-white font-bold border-3 border-white">JD</div>
+              <div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center text-white font-bold border-3 border-white">MK</div>
+              <div class="w-12 h-12 rounded-full bg-accent flex items-center justify-center text-dark font-bold border-3 border-white">+5</div>
+            </div>
+            <div>
+              <p class="text-gray-600 text-sm">Trusted by families across the Triangle</p>
+              <div class="flex text-yellow-400 text-sm">★★★★★</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right - Content -->
+      <div class="lg:pl-8">
+        <div class="space-y-5 text-gray-600 text-lg leading-relaxed mb-8">
+          <p>
+            Founded in 2015, Raleigh Water Solutions started with a simple observation: families across the Triangle were struggling with water quality issues, but the solutions available were either overpriced or inadequate.
+          </p>
+          <p>
+            Our founder, a Raleigh native with 15 years in water treatment, decided to build something different—a local company that combines professional expertise with honest pricing and genuine care for our community.
+          </p>
+          <p>
+            Today, we've helped hundreds of families enjoy cleaner, softer water. From historic Oakwood bungalows to new builds in North Raleigh, we bring the same level of dedication to every home we serve.
+          </p>
+        </div>
+
+        <!-- Quote Block -->
+        <div class="bg-gray-50 rounded-2xl p-8 mb-8 relative">
+          <div class="absolute -top-4 left-8 text-6xl text-primary/20">"</div>
+          <p class="text-gray-800 font-medium text-lg italic pt-4">
+            We treat every home like it's our own. That's why 90% of our business comes from referrals and repeat customers.
+          </p>
+          <div class="flex items-center gap-3 mt-4 pt-4 border-t border-gray-200">
+            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold">MT</div>
+            <div>
+              <p class="font-semibold text-gray-900">Mike Thompson</p>
+              <p class="text-sm text-gray-500">Founder & CEO</p>
+            </div>
+          </div>
+        </div>
+
+        <a href="#contact" class="btn-primary">
+          Meet Our Team
+        </a>
+      </div>
+    </div>
+
+    <!-- Stats Bar - Full Width -->
+    <div class="mt-24 bg-gradient-to-r from-primary/5 via-secondary/5 to-accent/5 rounded-3xl p-12">
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-8">
+        {stats.map((stat) => (
+          <div class="text-center">
+            <div class="text-5xl md:text-6xl font-bold text-primary mb-2">{stat.number}</div>
+            <div class="text-gray-600 font-medium text-lg">{stat.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>

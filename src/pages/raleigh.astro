@@ -1,0 +1,216 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const neighborhoods = [
+  'North Raleigh',
+  'Downtown',
+  'Oakwood',
+  'Brier Creek',
+  'Cameron Village',
+  'Five Points',
+  'Midtown',
+  'Crabtree',
+];
+
+const raleighWaterIssues = [
+  {
+    title: 'Hard Water',
+    description: 'Raleigh water averages 7-10 grains per gallon hardness, causing scale buildup and dry skin.',
+    solution: 'Our water softeners remove hardness minerals for softer skin and protected appliances.',
+  },
+  {
+    title: 'Chlorine Taste',
+    description: 'Municipal water treatment leaves chlorine that affects taste and smell.',
+    solution: 'Carbon filtration removes chlorine for fresh, clean-tasting water from every tap.',
+  },
+  {
+    title: 'Sediment',
+    description: 'Older pipes in historic neighborhoods can introduce rust and particles.',
+    solution: 'Sediment pre-filters capture particles before they reach your fixtures.',
+  },
+];
+---
+
+<Layout
+  title="Water Filtration Raleigh NC | Whole House & Softener Systems"
+  description="Raleigh's #1 water filtration company. Whole house systems, water softeners & RO systems. Free water testing, lifetime warranty. Serving all Raleigh neighborhoods."
+>
+  <Navbar />
+
+  <!-- Hero Section -->
+  <section class="pt-32 pb-20 bg-gradient-to-br from-primary to-secondary">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="max-w-3xl">
+        <span class="inline-block bg-white/20 text-white text-sm font-medium px-4 py-1 rounded-full mb-4">Raleigh, NC</span>
+
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          Water Filtration Systems in
+          <span class="text-accent">Raleigh, NC</span>
+        </h1>
+
+        <p class="text-xl text-white/90 mb-8">
+          Professional water softeners, whole house filtration, and reverse osmosis systems
+          installed by local Raleigh experts. Free water testing available.
+        </p>
+
+        <div class="flex flex-col sm:flex-row gap-4">
+          <a href="/" class="btn-primary bg-white text-primary hover:bg-gray-100">
+            Get Free Water Test
+          </a>
+          <a href="tel:+19195550142" class="btn-outline border-white text-white hover:bg-white hover:text-primary">
+            Call (919) 555-0142
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Raleigh Water Issues -->
+  <section class="section-padding bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Common Water Issues in
+          <span class="gradient-text">Raleigh</span>
+        </h2>
+        <p class="text-lg text-gray-600">
+          Raleigh's municipal water is safe but contains hardness minerals and chlorine that affect taste,
+          appliances, and your family's comfort.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        {raleighWaterIssues.map((issue) => (
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <h3 class="text-xl font-bold text-gray-900 mb-3">{issue.title}</h3>
+            <p class="text-gray-600 mb-4">{issue.description}</p>
+            <div class="bg-primary/10 rounded-lg p-4">
+              <span class="text-sm font-semibold text-primary">Solution: </span>
+              <span class="text-sm text-gray-700">{issue.solution}</span>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Service Areas -->
+  <section class="section-padding bg-gray-50">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Serving All
+          <span class="gradient-text">Raleigh Neighborhoods</span>
+        </h2>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-3">
+        {neighborhoods.map((neighborhood) => (
+          <span class="px-6 py-3 bg-white rounded-full text-gray-700 font-medium shadow-sm">
+            {neighborhood}
+          </span>
+        ))}
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-gray-600 mb-6">Don't see your neighborhood? We serve all of Raleigh and surrounding areas.</p>
+        <a href="tel:+19195550142" class="btn-primary">
+          Call to Check Your Area
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="section-padding bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Raleigh's Most Trusted
+            <span class="gradient-text">Water Filtration Company</span>
+          </h2>
+
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <div>
+                <strong class="text-gray-900">Local Raleigh Experts</strong>
+                <p class="text-gray-600">We know Raleigh water and have served 500+ local homes</p>
+              </div>
+            </li>
+
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <div>
+                <strong class="text-gray-900">Free In-Home Water Testing</strong>
+                <p class="text-gray-600">Comprehensive analysis with same-day results</p>
+              </div>
+            </li>
+
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <div>
+                <strong class="text-gray-900">Lifetime Warranty</strong>
+                <p class="text-gray-600">Every system backed by our lifetime guarantee</p>
+              </div>
+            </li>
+
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+              </svg>
+              <div>
+                <strong class="text-gray-900">Flexible Financing</strong>
+                <p class="text-gray-600">0% APR for 24 months available</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Get Your Free Quote</h3>
+          <p class="text-gray-600 mb-6">
+            Schedule your complimentary water test and consultation.
+            We'll test your water and provide a custom recommendation.
+          </p>
+
+          <a href="/" class="btn-primary w-full text-center block">
+            Schedule Free Test
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema Markup for Raleigh -->
+  <script type="application/ld+json" slot="head">
+    {`
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "Raleigh Water Solutions - Raleigh",
+        "description": "Water filtration and softening services in Raleigh, NC",
+        "areaServed": {
+          "@type": "City",
+          "name": "Raleigh",
+          "containedInPlace": {
+            "@type": "State",
+            "name": "North Carolina"
+          }
+        },
+        "serviceType": ["Water Filtration", "Water Softening", "Reverse Osmosis"]
+      }
+    `}
+  </script>
+
+  <Footer />
+</Layout>

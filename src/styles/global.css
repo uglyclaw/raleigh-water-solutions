@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+:root {
+  --primary: #0077b6;
+  --primary-dark: #005a8c;
+  --secondary: #00b4d8;
+  --accent: #90e0ef;
+  --dark: #03045e;
+  --light: #f8f9fa;
+  --white: #ffffff;
+  --gray-100: #f3f4f6;
+  --gray-600: #4b5563;
+  --gray-800: #1f2937;
+}
+
+@theme {
+  --color-primary: #0077b6;
+  --color-primary-dark: #005a8c;
+  --color-secondary: #00b4d8;
+  --color-accent: #90e0ef;
+  --color-dark: #03045e;
+  --color-light: #f8f9fa;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  line-height: 1.6;
+  color: var(--gray-800);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.wave-bg {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+}
+
+.glass-card {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center px-8 py-4 bg-primary text-white font-semibold rounded-lg transition-all duration-300 hover:bg-primary-dark hover:shadow-lg hover:-translate-y-0.5;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center px-8 py-4 bg-white text-primary font-semibold rounded-lg border-2 border-primary transition-all duration-300 hover:bg-primary hover:text-white;
+}
+
+.section-padding {
+  @apply py-20 md:py-28;
+}
+
+.container-padding {
+  @apply px-4 sm:px-6 lg:px-8 xl:px-12;
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--gray-100);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--primary);
+  border-radius: 4px;
+}
+
+/* Focus styles */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Form styles */
+input, textarea, select {
+  @apply w-full px-4 py-3 border border-gray-200 rounded-lg transition-colors focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none;
+}

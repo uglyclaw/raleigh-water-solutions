@@ -1,0 +1,61 @@
+---
+const features = [
+  {
+    icon: '💧',
+    title: 'Free Water Testing',
+    description: 'Comprehensive analysis of your water quality. We identify contaminants and recommend the perfect solution for your home.',
+  },
+  {
+    icon: '🏠',
+    title: 'Local Raleigh Experts',
+    description: 'Born and raised in the Triangle. We understand local water issues like hard water, chlorine, and common contaminants.',
+  },
+  {
+    icon: '🔧',
+    title: 'Professional Installation',
+    description: 'Certified technicians ensure your system is installed correctly. Most installations completed in just a few hours.',
+  },
+  {
+    icon: '🛡️',
+    title: 'Lifetime Warranty',
+    description: 'Every system we install comes with a lifetime warranty. Clean water for life, guaranteed.',
+  },
+  {
+    icon: '💰',
+    title: 'Flexible Financing',
+    description: '0% APR for 24 months. Clean water shouldn\'t wait. Multiple payment plans available to fit your budget.',
+  },
+  {
+    icon: '⭐',
+    title: '5-Star Rated',
+    description: 'Over 500 happy customers in Raleigh, Durham, and Cary. Check our Google reviews and see why neighbors trust us.',
+  },
+];
+---
+
+<section id="features" class="section-padding bg-gray-50">
+  <div class="max-w-7xl mx-auto container-padding">
+    <div class="text-center max-w-3xl mx-auto mb-16">
+      <span class="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3">Why Choose Us</span>
+      <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+        Why Homeowners Choose
+        <span class="gradient-text">Raleigh Water Solutions</span>
+      </h2>
+      <p class="text-lg text-gray-600">
+        From free water testing to lifetime warranties, we're committed to delivering clean, safe water for every home in the Triangle.
+      </p>
+    </div>
+
+    <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {features.map((feature, index) => (
+        <div
+          class="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 hover:-translate-y-1"
+        >
+          <div class="text-5xl mb-5 group-hover:scale-110 transition-transform duration-300">{feature.icon}</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-3">{feature.title}</h3>
+          <p class="text-gray-600 leading-relaxed">{feature.description}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

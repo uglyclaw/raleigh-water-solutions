@@ -1,0 +1,195 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Footer from '../components/Footer.astro';
+
+const benefits = [
+  {
+    title: 'Softer Skin & Hair',
+    description: 'Hard water dries out skin and leaves hair brittle. Soft water feels noticeably better.',
+    icon: '✨',
+  },
+  {
+    title: 'Longer Appliance Life',
+    description: 'Water heaters, dishwashers, and washing machines last 30% longer with soft water.',
+    icon: '🔧',
+  },
+  {
+    title: 'Spotless Dishes',
+    description: 'No more white spots on glasses and silverware. Soft water rinses clean.',
+    icon: '🍽️',
+  },
+  {
+    title: 'Use 50% Less Soap',
+    description: 'Soft water lathers better, so you need less soap, shampoo, and detergent.',
+    icon: '🧼',
+  },
+  {
+    title: 'Cleaner Clothes',
+    description: 'Fabrics stay brighter and softer. No mineral buildup in fabric fibers.',
+    icon: '👕',
+  },
+  {
+    title: 'No Scale Buildup',
+    description: 'Faucets, showerheads, and pipes stay free of mineral deposits.',
+    icon: '✓',
+  },
+];
+
+const specs = [
+  { label: 'Grain Capacity', value: '48,000 - 80,000 grains' },
+  { label: 'Flow Rate', value: '15-20 GPM' },
+  { label: 'Regeneration', value: 'Metered, demand-initiated' },
+  { label: 'Resin Type', value: 'High-capacity ion exchange' },
+  { label: 'Control Valve', value: 'Digital programmable' },
+  { label: 'Warranty', value: 'Lifetime on tanks, 10 years on valve' },
+];
+---
+
+<Layout
+  title="Water Softener Raleigh | Whole House Softening Systems NC"
+  description="Professional water softener installation in Raleigh, NC. Remove hard water minerals, protect appliances, enjoy softer skin. Free water test, lifetime warranty, financing available."
+>
+  <Navbar />
+
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-gradient-to-br from-primary to-secondary">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="inline-block bg-white/20 text-white text-sm font-medium px-4 py-1 rounded-full mb-4">Water Softeners</span>
+
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Say Goodbye to
+            <span class="text-accent">Hard Water</span>
+          </h1>
+
+          <p class="text-xl text-white/90 mb-8">
+            Professional water softener installation in Raleigh, Durham, and the Triangle.
+            Enjoy softer skin, spotless dishes, and longer-lasting appliances.
+          </p>
+
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="/" class="btn-primary bg-white text-primary hover:bg-gray-100">
+              Get Free Quote
+            </a>
+            <a href="tel:+19195550142" class="btn-outline border-white text-white hover:bg-white hover:text-primary">
+              Call (919) 555-0142
+            </a>
+          </div>
+
+          <div class="mt-8 flex items-center gap-6">
+            <div class="text-white">
+              <div class="text-3xl font-bold">$1,899</div>
+              <div class="text-white/70 text-sm">Starting price installed</div>
+            </div>
+            <div class="text-white">
+              <div class="text-3xl font-bold">50%</div>
+              <div class="text-white/70 text-sm">Less soap needed</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hidden lg:block">
+          <div class="bg-white rounded-2xl p-8 shadow-2xl">
+            <div class="text-center mb-6">
+              <div class="w-24 h-24 bg-gradient-to-br from-primary to-secondary rounded-2xl mx-auto flex items-center justify-center text-white text-5xl">
+                💧
+              </div>
+            </div>
+
+            <h3 class="text-2xl font-bold text-center text-gray-900 mb-2">Water Softener Pro</h3>
+            <p class="text-center text-gray-600 mb-6">Complete hard water solution</p>
+
+            <div class="space-y-3 mb-6">
+              <div class="flex justify-between">
+                <span class="text-gray-600">48,000 Grain Capacity</span>
+                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Digital Controls</span>
+                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Professional Install</span>
+                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              </div>
+              <div class="flex justify-between">
+                <span class="text-gray-600">Lifetime Warranty</span>
+                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path></svg>
+              </div>
+            </div>
+
+            <div class="text-center">
+              <div class="text-4xl font-bold text-primary">$1,899</div>
+              <div class="text-gray-400 line-through">$2,499</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="section-padding bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Benefits of a
+          <span class="gradient-text">Water Softener</span>
+        </h2>
+        <p class="text-lg text-gray-600">
+          Hard water affects every aspect of your home. Here's how soft water changes everything.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        {benefits.map((benefit) => (
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="text-4xl mb-4">{benefit.icon}</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{benefit.title}</h3>
+            <p class="text-gray-600">{benefit.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Specs -->
+  <section class="section-padding bg-gray-50">
+    <div class="max-w-4xl mx-auto container-padding">
+      <div class="bg-white rounded-2xl p-8 shadow-sm">
+        <h2 class="text-2xl font-bold text-gray-900 mb-6">System Specifications</h2>
+
+        <div class="grid md:grid-cols-2 gap-6">
+          {specs.map((spec) => (
+            <div class="flex justify-between py-3 border-b border-gray-100">
+              <span class="text-gray-600">{spec.label}</span>
+              <span class="font-semibold text-gray-900">{spec.value}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-primary">
+    <div class="max-w-7xl mx-auto container-padding text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        Ready for Soft Water?
+      </h2>
+
+      <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+        Schedule your free water test and get a custom quote for your home.
+        Same-week installation available.
+      </p>
+
+      <a href="/" class="inline-flex items-center justify-center px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+        Get Free Water Test
+      </a>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
