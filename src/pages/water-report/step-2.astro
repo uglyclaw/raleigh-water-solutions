@@ -276,8 +276,7 @@ import Footer from '../../components/Footer.astro';
         sessionStorage.setItem('waterReportData', JSON.stringify(waterData));
         sessionStorage.setItem('waterReportContact', JSON.stringify({ firstName, lastName, phone, email }));
 
-        console.log('Redirecting to:', `/water-report/${zip}`);
-        window.location.href = `/water-report/${zip}`;
+        window.location.href = `/water-report/${zip}.html`;
 
       } catch (error) {
         console.error('Error:', error);
