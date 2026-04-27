@@ -134,7 +134,7 @@ import Footer from '../../components/Footer.astro';
     }
 
     zipInput?.addEventListener('input', (e) => {
-      const target = e.target as HTMLInputElement;
+      const target = e.target;
       target.value = target.value.replace(/\D/g, '').slice(0, 5);
     });
 
@@ -144,9 +144,9 @@ import Footer from '../../components/Footer.astro';
       formError?.classList.add('hidden');
 
       const zip = zipInput?.value.trim();
-      const firstName = (document.getElementById('firstName') as HTMLInputElement)?.value.trim();
-      const lastName = (document.getElementById('lastName') as HTMLInputElement)?.value.trim();
-      const phone = (document.getElementById('phone') as HTMLInputElement)?.value.trim();
+      const firstName = document.getElementById('firstName')?.value.trim();
+      const lastName = document.getElementById('lastName')?.value.trim();
+      const phone = document.getElementById('phone')?.value.trim();
 
       if (!zip || zip.length !== 5) {
         zipError?.classList.remove('hidden');
@@ -202,10 +202,11 @@ import Footer from '../../components/Footer.astro';
       }
     });
 
-    function getRecommendedSystem(contaminants: any[]) {
-      const hasPFAS = contaminants?.some(c => c.name.includes('PFAS'));
-      const hasLead = contaminants?.some(c => c.name.includes('Lead'));
-      const hasHardness = contaminants?.some(c => c.name.includes('Hardness'));
+    function getRecommendedSystem(contaminants) {
+      if (!contaminants) return 'Complete Home System';
+      const hasPFAS = contaminants.some(c => c.name?.includes('PFAS'));
+      const hasLead = contaminants.some(c => c.name?.includes('Lead'));
+      const hasHardness = contaminants.some(c => c.name?.includes('Hardness'));
 
       if (hasPFAS || hasLead) return 'Complete Home System + RO';
       if (hasHardness) return 'Complete Home System';

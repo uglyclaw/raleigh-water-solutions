@@ -4,7 +4,16 @@ import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 
 export function getStaticPaths() {
-  return [];
+  // Return a few example ZIPs for pre-rendering
+  // Actual reports work client-side via sessionStorage
+  return [
+    { params: { zip: '27601' } },
+    { params: { zip: '27603' } },
+    { params: { zip: '27701' } },
+    { params: { zip: '27511' } },
+    { params: { zip: '27513' } },
+    { params: { zip: '27707' } },
+  ];
 }
 
 const { zip } = Astro.params;
