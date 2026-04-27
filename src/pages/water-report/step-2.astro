@@ -158,9 +158,18 @@ import Footer from '../../components/Footer.astro';
 
       try {
         // Fetch water data
+        console.log('Fetching water data for ZIP:', zip);
         const waterResponse = await fetch(`/api/water-data?zip=${zip}`);
-        if (!waterResponse.ok) throw new Error('Failed to fetch water data');
+        console.log('Water API response status:', waterResponse.status);
+
+        if (!waterResponse.ok) {
+          const errorText = await waterResponse.text();
+          console.error('Water API error:', errorText);
+          throw new Error(`Failed to fetch water data: ${waterResponse.status}`);
+        }
+
         const waterData = await waterResponse.json();
+        console.log('Water data received:', waterData);
 
         // Send webhook
         const webhookPayload = {

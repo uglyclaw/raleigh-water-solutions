@@ -108,8 +108,18 @@ function generateMockWaterData(zip: string) {
     Math.floor(Math.random() * 20 + 60) :
     Math.floor(Math.random() * 15 + 75);
 
+  // Determine city from ZIP prefix
+  const getCityFromZip = (zipCode: string) => {
+    if (zipCode.startsWith('276')) return 'Raleigh';
+    if (zipCode.startsWith('277')) return 'Durham';
+    if (zipCode.startsWith('27511') || zipCode.startsWith('27513') || zipCode.startsWith('27518')) return 'Cary';
+    if (zipCode.startsWith('275')) return 'Apex';
+    return 'Raleigh-Durham Area';
+  };
+
   return {
     zip,
+    city: getCityFromZip(zip),
     waterSystem: isTriangle ? 'City of Raleigh Public Utilities' : 'Municipal Water System',
     riskScore,
     grade: riskScore >= 90 ? 'A' : riskScore >= 80 ? 'B' : riskScore >= 70 ? 'C' : 'D',
