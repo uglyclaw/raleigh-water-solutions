@@ -1,0 +1,129 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const products = [
+  {
+    name: 'Complete Home System',
+    description: 'The ultimate whole-house solution. Filtration + softening in one powerful system.',
+    image: '🏠',
+    badge: 'Most Popular',
+    features: ['Whole-home filtration', 'Water softening', 'Heavy metal removal', 'Lifetime warranty'],
+    href: '/products/complete-home-system',
+  },
+  {
+    name: 'Water Softener Pro',
+    description: 'Eliminate hard water problems. Protect appliances and enjoy softer skin.',
+    image: '✨',
+    badge: 'Best Value',
+    features: ['75% less soap needed', 'Appliance protection', 'Salt-efficient', '10-year warranty'],
+    href: '/products/water-softener-pro',
+  },
+  {
+    name: 'Reverse Osmosis System',
+    description: 'Crystal-clear drinking water from your kitchen tap. 99% contaminant removal.',
+    image: '💧',
+    badge: null,
+    features: ['5-stage filtration', '100 GPD capacity', 'Alkaline option', '5-year warranty'],
+    href: '/products/reverse-osmosis',
+  },
+  {
+    name: 'Pre-Sediment Filter',
+    description: 'First line of defense against rust, sand, and debris. Protects your plumbing.',
+    image: '🛡️',
+    badge: 'Add-On',
+    features: ['Whole-house protection', 'Easy filter changes', 'No pressure loss', '1-year warranty'],
+    href: '/products/pre-sediment-filter',
+  },
+];
+---
+
+<Layout
+  title="Water Filtration Products | Raleigh Water Solutions"
+  description="Professional water filtration and softening systems for Raleigh homes. Whole house systems, water softeners, reverse osmosis, and sediment filters. Free installation."
+>
+  <Navbar />
+
+  <section class="pt-32 pb-20 bg-gradient-to-br from-primary to-secondary">
+    <div class="max-w-7xl mx-auto container-padding text-center">
+      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+        Our Water
+        <span class="text-accent">Solutions</span>
+      </h1>
+      <p class="text-xl text-white/90 max-w-3xl mx-auto">
+        Professional-grade systems designed for Raleigh's hard water.
+        Installed by local experts with lifetime support.
+      </p>
+    </div>
+  </section>
+
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid lg:grid-cols-2 gap-8">
+        {products.map((product) => (
+          <a href={product.href} class={`group relative bg-white rounded-2xl p-8 border-2 ${product.badge ? 'border-primary' : 'border-gray-100'} hover:border-primary hover:shadow-xl transition-all duration-300 block`}>
+            {product.badge && (
+              <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-sm font-semibold px-4 py-1 rounded-full">
+                {product.badge}
+              </div>
+            )}
+
+            <div class="flex flex-col h-full">
+              <div class="text-6xl mb-4">{product.image}</div>
+
+              <h2 class="text-2xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
+                {product.name}
+              </h2>
+              <p class="text-gray-600 mb-6">{product.description}</p>
+
+              <ul class="space-y-2 mb-6 flex-1">
+                {product.features.map((feature) => (
+                  <li class="flex items-center gap-2 text-gray-700">
+                    <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                    </svg>
+                    <span class="text-sm">{feature}</span>
+                  </li>
+                ))}
+              </ul>
+
+              <div class="flex items-center justify-between pt-6 border-t border-gray-100">
+                <span class="text-primary font-semibold flex items-center gap-1">
+                  Learn More
+                  <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </span>
+                <span class="text-green-600 text-sm font-medium">Free Quote →</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="bg-primary rounded-3xl p-12 text-center text-white">
+        <h2 class="text-3xl md:text-4xl font-bold mb-4">
+          Not Sure Which System You Need?
+        </h2>
+        <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+          Get a free in-home water test and personalized recommendation from our local experts.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="tel:+19195551234" class="px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+            Call (919) 555-0123
+          </a>
+          <a href="/#contact" class="px-8 py-4 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition-colors">
+            Schedule Free Test
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <Footer />
+</Layout>
