@@ -1,0 +1,285 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const specs = [
+  { label: 'Softening Capacity', value: '48,000 grains' },
+  { label: 'Carbon Media', value: 'Catalytic coconut shell' },
+  { label: 'Flow Rate', value: '12-15 GPM' },
+  { label: 'Valve', value: 'Digital demand-initiated' },
+  { label: 'Tank', value: 'Twin chamber design' },
+  { label: 'Warranty', value: '5-year warranty' },
+];
+
+const features = [
+  {
+    title: 'Two-in-One System',
+    description: 'Softens water AND removes chlorine in a single compact unit. Saves space and money.',
+    icon: '💧',
+  },
+  {
+    title: 'Better Water Quality',
+    description: 'Eliminates hard water scale while removing chlorine taste and odor from every tap.',
+    icon: '✨',
+  },
+  {
+    title: 'Premium Components',
+    description: 'High-capacity resin and catalytic carbon for maximum performance and longevity.',
+    icon: '🔧',
+  },
+  {
+    title: 'Smart Regeneration',
+    description: 'Digital valve monitors usage and regenerates only when needed. Saves salt and water.',
+    icon: '📊',
+  },
+];
+
+const removes = [
+  { name: 'Hardness', icon: '💎' },
+  { name: 'Chlorine', icon: '🧪' },
+  { name: 'Chloramines', icon: '⚗️' },
+  { name: 'Sediment', icon: '🌫️' },
+  { name: 'Taste/Odor', icon: '👃' },
+  { name: 'Chemicals', icon: '🧴' },
+];
+---
+
+<Layout
+  title="Water Softener with Chlorine Filtration | Combo System Raleigh NC"
+  description="2-in-1 water softener with built-in chlorine filtration. Removes hardness and chemicals in one system. Perfect for city water. 5-year warranty."
+>
+  <Navbar />
+
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-gradient-to-br from-primary to-secondary">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="inline-block bg-white/20 text-white text-sm font-medium px-4 py-1 rounded-full mb-4">2-in-1 System</span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Softener + Chlorine
+            <span class="text-accent">Filtration</span>
+          </h1>
+          <p class="text-xl text-white/90 mb-8">
+            The ultimate combo system for city water. Removes hardness AND chlorine in one
+            compact unit. Softer skin, better taste, and protected appliances.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#contact" class="btn-primary bg-white text-primary hover:bg-gray-100">
+              Get Free Quote
+            </a>
+            <a href="tel:+19195551234" class="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-center">
+              Call (919) 555-0123
+            </a>
+          </div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+          <img src="/images/products/complete-home-system.png" alt="Water Softener with Chlorine Filtration" class="w-full max-w-xs mx-auto mb-4 rounded-xl" />
+          <div class="text-center">
+            <div class="text-white text-lg mb-2">Softens + Filters</div>
+            <div class="text-accent text-3xl font-bold">5-Year Warranty</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Why Choose a
+          <span class="gradient-text">Combo System?</span>
+        </h2>
+        <p class="text-lg text-gray-600">
+          Get complete water treatment in one compact unit. Perfect for city water
+          that has both hardness and chlorine.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {features.map((feature) => (
+          <div class="bg-gray-50 rounded-2xl p-8 text-center">
+            <div class="text-5xl mb-4">{feature.icon}</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
+            <p class="text-gray-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What It Removes -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Removes Hardness
+          <span class="gradient-text">& Chemicals</span>
+        </h2>
+        <p class="text-lg text-gray-600">
+          Dual-action media bed tackles both physical hardness and chemical contaminants.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+        {removes.map((item) => (
+          <div class="bg-white rounded-2xl p-6 text-center shadow-sm">
+            <div class="text-4xl mb-3">{item.icon}</div>
+            <h3 class="font-bold text-gray-900">{item.name}</h3>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            How the Combo System Works
+          </h2>
+
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">1</div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">Water Enters</h3>
+                <p class="text-gray-600">Hard, chlorinated city water flows into the twin-chamber tank.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">2</div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">Carbon Filtration</h3>
+                <p class="text-gray-600">Water first passes through catalytic carbon, removing chlorine, taste, and odor.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">3</div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">Ion Exchange Softening</h3>
+                <p class="text-gray-600">Then flows through premium resin beads that remove calcium and magnesium.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">4</div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">Soft, Clean Water</h3>
+                <p class="text-gray-600">Crystal clear, soft, chlorine-free water flows to every tap in your home.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">System Specifications</h3>
+          <div class="space-y-4">
+            {specs.map((spec) => (
+              <div class="flex justify-between py-3 border-b border-gray-200">
+                <span class="text-gray-600">{spec.label}</span>
+                <span class="font-semibold text-gray-900">{spec.value}</span>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-8 p-4 bg-green-50 rounded-xl">
+            <p class="text-green-800 text-sm font-medium">
+              <strong>Space Saver:</strong> One tank does the job of two separate systems.
+              Perfect for homes with limited space.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pairs With -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Complete Your System
+        </h2>
+        <p class="text-lg text-gray-600">
+          Add these popular upgrades for total water protection.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <a href="/products/pre-sediment-filter" class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all text-center">
+          <div class="text-4xl mb-4">🛡️</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Pre-Sediment Filter</h3>
+          <p class="text-gray-600 mb-4">Protect your combo system from sediment and extend its life.</p>
+          <span class="text-primary font-semibold">Learn More →</span>
+        </a>
+
+        <a href="/products/tankless-ro" class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all text-center">
+          <div class="text-4xl mb-4">💧</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Tankless RO System</h3>
+          <p class="text-gray-600 mb-4">Add purified drinking water at your kitchen sink.</p>
+          <span class="text-primary font-semibold">Learn More →</span>
+        </a>
+
+        <a href="/products/uv-sterilizer" class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all text-center">
+          <div class="text-4xl mb-4">⚡</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">UV Sterilizer</h3>
+          <p class="text-gray-600 mb-4">Kill 99.99% of bacteria and viruses for complete protection.</p>
+          <span class="text-primary font-semibold">Learn More →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-20 bg-primary">
+    <div class="max-w-4xl mx-auto container-padding text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        Get the Ultimate Combo System
+      </h2>
+      <p class="text-xl text-white/90 mb-8">
+        Soft water + chlorine-free water in one system. Get your free quote today.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+19195551234" class="px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+          Call (919) 555-0123
+        </a>
+        <a href="/#contact" class="px-8 py-4 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition-colors">
+          Schedule Online
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema -->
+  <script type="application/ld+json" slot="head">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Water Softener with Chlorine Filtration",
+      "description": "2-in-1 water softening and chlorine filtration system for city water",
+      "brand": {
+        "@type": "Brand",
+        "name": "Raleigh Water Solutions"
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "USD",
+        "seller": {
+          "@type": "LocalBusiness",
+          "name": "Raleigh Water Solutions"
+        }
+      }
+    })}
+  </script>
+
+  <Footer />
+</Layout>
