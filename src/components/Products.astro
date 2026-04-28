@@ -97,46 +97,52 @@ const products = [
             </div>
           )}
 
-          <div class="flex flex-col md:flex-row md:items-start gap-6">
-            <!-- Product Image -->
-            <div class="w-full md:w-48 flex-shrink-0">
-              <img src={product.image} alt={product.name} class="w-full h-auto rounded-xl group-hover:scale-105 transition-transform duration-300" loading="lazy" />
-            </div>
+          <div class="flex flex-col h-full">
+            <div class="flex flex-col md:flex-row md:items-start gap-6 flex-1">
+              <!-- Product Image -->
+              <div class="w-full md:w-40 flex-shrink-0">
+                <img src={product.image} alt={product.name} class="w-full h-auto max-h-48 object-contain rounded-xl group-hover:scale-105 transition-transform duration-300" loading="lazy" />
+              </div>
 
-            <!-- Product Info -->
-            <div class="flex-1">
-              <h3 class="text-2xl font-bold text-gray-900 mb-2">{product.name}</h3>
-              <p class="text-gray-600 mb-6">{product.description}</p>
+              <!-- Product Info -->
+              <div class="flex-1 min-w-0">
+                <h3 class="text-xl font-bold text-gray-900 mb-2 leading-tight">{product.name}</h3>
+                <p class="text-gray-600 mb-4 text-sm line-clamp-2">{product.description}</p>
 
-              <!-- Features -->
-              <ul class="space-y-2 mb-6">
-                {product.features.map((feature) => (
-                  <li class="flex items-center gap-2 text-gray-700">
-                    <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
-                    </svg>
-                    <span class="text-sm">{feature}</span>
-                  </li>
-                ))}
-              </ul>
+                <!-- Features -->
+                <ul class="space-y-1 mb-4">
+                  {product.features.slice(0, 4).map((feature) => (
+                    <li class="flex items-center gap-2 text-gray-700">
+                      <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"></path>
+                      </svg>
+                      <span class="text-sm truncate">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </div>
 
             <!-- CTA -->
-            <div class="md:text-right flex-shrink-0 flex flex-col items-start md:items-end">
-              <div class="text-green-600 text-sm font-semibold mb-2 flex items-center gap-1">
-                <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
-                  <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
-                </svg>
-                Save up to {Math.round((1 - product.price/product.originalPrice) * 100)}%
+            <div class="mt-auto pt-4 border-t border-gray-100 flex flex-col md:flex-row md:items-center md:justify-between gap-3">
+              <div>
+                <div class="text-green-600 text-sm font-semibold flex items-center gap-1">
+                  <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd"/>
+                  </svg>
+                  Save up to {Math.round((1 - product.price/product.originalPrice) * 100)}%
+                </div>
+                <div class="text-xs text-gray-500">Professional Installation</div>
               </div>
-              <div class="text-sm text-gray-500 mb-4">Professional Installation Included</div>
-              <span class="text-primary font-semibold group-hover:text-primary-dark transition-colors flex items-center gap-1 mb-2">
-                Learn More
-                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                </svg>
-              </span>
-              <span class="btn-primary w-full md:w-auto text-center">Get Free Quote</span>
+              <div class="flex flex-col md:items-end gap-1">
+                <span class="text-primary font-semibold group-hover:text-primary-dark transition-colors flex items-center gap-1 text-sm">
+                  Learn More
+                  <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </span>
+                <span class="btn-primary text-sm px-4 py-2 whitespace-nowrap">Get Free Quote</span>
+              </div>
             </div>
           </div>
         </a>

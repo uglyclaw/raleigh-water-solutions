@@ -1,0 +1,299 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const specs = [
+  { label: 'UV Lamp', value: '40W High-output' },
+  { label: 'Flow Rate', value: 'Up to 12 GPM' },
+  { label: 'Germicidal', value: '99.99% effective' },
+  { label: 'Lamp Life', value: '9,000 hours (1 year)' },
+  { label: 'Housing', value: 'Stainless steel' },
+  { label: 'Sensor', value: 'UV intensity monitor' },
+  { label: 'Warranty', value: '5-year warranty' },
+];
+
+const kills = [
+  { name: 'E. coli', percent: '99.99%' },
+  { name: 'Giardia', percent: '99.99%' },
+  { name: 'Cryptosporidium', percent: '99.99%' },
+  { name: 'Viruses', percent: '99.99%' },
+  { name: 'Bacteria', percent: '99.99%' },
+  { name: 'Legionella', percent: '99.99%' },
+];
+
+const whenToUse = [
+  {
+    scenario: 'Well Water',
+    description: 'Essential for well water to eliminate bacteria, viruses, and microorganisms.',
+  },
+  {
+    scenario: 'City Water Alerts',
+    description: 'Protects your family during boil water advisories and line breaks.',
+  },
+  {
+    scenario: 'Immune Compromised',
+    description: 'Recommended for elderly, infants, or those with weakened immune systems.',
+  },
+  {
+    scenario: 'Peace of Mind',
+    description: 'Adds an extra layer of protection to any water filtration system.',
+  },
+];
+---
+
+<Layout
+  title="UV Water Purifier Raleigh | Whole House UV Sterilization NC"
+  description="Whole house UV water purifier for Raleigh homes. Kills 99.99% of bacteria, viruses, and microorganisms. Chemical-free disinfection with 5-year warranty."
+>
+  <Navbar />
+
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-gradient-to-br from-primary to-secondary">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="inline-block bg-white/20 text-white text-sm font-medium px-4 py-1 rounded-full mb-4">Chemical-Free</span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Whole House
+            <span class="text-accent">UV Purifier</span>
+          </h1>
+          <p class="text-xl text-white/90 mb-8">
+            Kill 99.99% of bacteria, viruses, and microorganisms without chemicals.
+            The final layer of protection for your family's water.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#contact" class="btn-primary bg-white text-primary hover:bg-gray-100">
+              Get Free Quote
+            </a>
+            <a href="tel:+19195551234" class="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-center">
+              Call (919) 555-0123
+            </a>
+          </div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+          <img src="/images/products/complete-home-system.png" alt="UV Water Purifier" class="w-full max-w-xs mx-auto mb-4 rounded-xl" />
+          <div class="text-center">
+            <div class="text-white text-lg mb-2">99.99% Germicidal</div>
+            <div class="text-accent text-3xl font-bold">5-Year Warranty</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How UV Works -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            How UV Purification Works
+          </h2>
+          <p class="text-gray-600 mb-8">
+            Ultraviolet light at 254 nanometers disrupts the DNA of microorganisms,
+            rendering them unable to reproduce. It's like giving bacteria and viruses
+            a sunburn they can't survive.
+          </p>
+
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">1</div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">Water Enters Chamber</h3>
+                <p class="text-gray-600">Water flows through the stainless steel chamber around the UV lamp.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">2</div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">UV Light Destroys DNA</h3>
+                <p class="text-gray-600">254nm UV-C light penetrates microorganisms and destroys their ability to reproduce.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">3</div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">Clean Water Exits</h3>
+                <p class="text-gray-600">Sterilized water flows to every tap in your home - no chemicals added.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">What UV Kills</h3>
+          <div class="grid grid-cols-2 gap-4">
+            {kills.map((item) => (
+              <div class="bg-white rounded-xl p-4 text-center shadow-sm">
+                <div class="text-2xl font-bold text-primary mb-1">{item.percent}</div>
+                <div class="text-sm text-gray-600">{item.name}</div>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-6 p-4 bg-blue-50 rounded-lg">
+            <p class="text-blue-800 text-sm">
+              <strong>Important:</strong> UV systems require clear water to work effectively.
+              Pre-filtration (sediment filter) is required for well water applications.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- When to Use -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          When Do You Need
+          <span class="gradient-text">UV Protection?</span>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {whenToUse.map((item) => (
+          <div class="bg-white rounded-2xl p-8 shadow-sm">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{item.scenario}</h3>
+            <p class="text-gray-600">{item.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Specs -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div class="bg-gray-50 rounded-2xl p-8">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">System Specifications</h3>
+          <div class="space-y-4">
+            {specs.map((spec) => (
+              <div class="flex justify-between py-3 border-b border-gray-200">
+                <span class="text-gray-600">{spec.label}</span>
+                <span class="font-semibold text-gray-900">{spec.value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">Maintenance</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+              </svg>
+              <div>
+                <strong class="text-gray-900">Annual Lamp Replacement</strong>
+                <p class="text-gray-600 text-sm">UV lamp must be replaced every 12 months for optimal performance.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd"/>
+              </svg>
+              <div>
+                <strong class="text-gray-900">Quartz Sleeve Cleaning</strong>
+                <p class="text-gray-600 text-sm">Clean the quartz sleeve annually to maintain UV transmission.</p>
+              </div>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-primary flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7-4a1 1 0 11-2 0 1 1 0 012 0zM9 9a1 1 0 000 2v3a1 1 0 001 1h1a1 1 0 100-2v-3a1 1 0 00-1-1H9z" clip-rule="evenodd"/>
+              </svg>
+              <div>
+                <strong class="text-gray-900">Smart Monitor</strong>
+                <p class="text-gray-600 text-sm">LED display shows UV intensity and alerts when service is needed.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Best Pairings -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Best Combined With
+        </h2>
+        <p class="text-lg text-gray-600">
+          UV systems work best when paired with other filtration for complete protection.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <a href="/products/pre-sediment-filter" class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Pre-Sediment Filter</h3>
+          <p class="text-gray-600 mb-4">Removes particles that can shield bacteria from UV light.</p>
+          <span class="text-primary font-semibold">Learn More →</span>
+        </a>
+
+        <a href="/products/complete-home-system" class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Complete Home System</h3>
+          <p class="text-gray-600 mb-4">Add UV to our whole-home filtration and softening system.</p>
+          <span class="text-primary font-semibold">Learn More →</span>
+        </a>
+
+        <a href="/products/well-water-system" class="bg-white rounded-2xl p-8 shadow-sm hover:shadow-lg transition-all">
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Well Water System</h3>
+          <p class="text-gray-600 mb-4">Essential add-on for well water treatment packages.</p>
+          <span class="text-primary font-semibold">Learn More →</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-20 bg-primary">
+    <div class="max-w-4xl mx-auto container-padding text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        Get Chemical-Free Protection
+      </h2>
+      <p class="text-xl text-white/90 mb-8">
+        Add UV sterilization to your water treatment system for complete peace of mind.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+19195551234" class="px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+          Call (919) 555-0123
+        </a>
+        <a href="/#contact" class="px-8 py-4 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition-colors">
+          Schedule Online
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema -->
+  <script type="application/ld+json" slot="head">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Whole House UV Water Purifier",
+      "description": "UV water sterilization system for whole house bacteria and virus removal",
+      "brand": {
+        "@type": "Brand",
+        "name": "Raleigh Water Solutions"
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "USD",
+        "seller": {
+          "@type": "LocalBusiness",
+          "name": "Raleigh Water Solutions"
+        }
+      }
+    })}
+  </script>
+
+  <Footer />
+</Layout>

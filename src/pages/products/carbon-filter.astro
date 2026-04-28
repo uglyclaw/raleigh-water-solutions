@@ -1,0 +1,283 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const specs = [
+  { label: 'Filtration Type', value: 'Catalytic Carbon' },
+  { label: 'Media Volume', value: '1.5 cubic feet' },
+  { label: 'Flow Rate', value: '8-10 GPM' },
+  { label: 'Chlorine Removal', value: 'Up to 5 ppm' },
+  { label: 'Tank Size', value: '10" x 54"' },
+  { label: 'Valve', value: 'Digital automatic' },
+  { label: 'Warranty', value: '5-year warranty' },
+];
+
+const removes = [
+  'Chlorine & chloramines',
+  'Pesticides & herbicides',
+  'Volatile organic compounds (VOCs)',
+  'Pharmaceutical traces',
+  'Taste & odor',
+  'Industrial solvents',
+  'Sediment & rust',
+  'Cloudiness',
+];
+
+const benefits = [
+  {
+    title: 'Better Taste',
+    description: 'Removes chlorine taste and chemical odors. Water tastes fresh and clean.',
+    icon: '💧',
+  },
+  {
+    title: 'Healthier Showers',
+    description: 'No more inhaling chlorine vapors. Better for skin and hair.',
+    icon: '🚿',
+  },
+  {
+    title: 'Protected Appliances',
+    description: 'Carbon filtration prevents chlorine damage to rubber seals and gaskets.',
+    icon: '🔧',
+  },
+  {
+    title: 'Chemical-Free',
+    description: 'Physical filtration - no salt, no chemicals, no electricity needed.',
+    icon: '🌿',
+  },
+];
+---
+
+<Layout
+  title="Whole House Carbon Filter Raleigh | Chlorine Removal System NC"
+  description="Whole house carbon water filter for Raleigh. Removes chlorine, chemicals, and odors. Chemical-free filtration with 5-year warranty."
+>
+  <Navbar />
+
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-gradient-to-br from-primary to-secondary">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="inline-block bg-white/20 text-white text-sm font-medium px-4 py-1 rounded-full mb-4">Chemical-Free</span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Whole House
+            <span class="text-accent">Carbon Filter</span>
+          </h1>
+          <p class="text-xl text-white/90 mb-8">
+            Remove chlorine, chloramines, and chemical contaminants from every tap.
+            No more chlorine taste, odors, or harmful chemicals in your water.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#contact" class="btn-primary bg-white text-primary hover:bg-gray-100">
+              Get Free Quote
+            </a>
+            <a href="tel:+19195551234" class="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-center">
+              Call (919) 555-0123
+            </a>
+          </div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+          <img src="/images/products/complete-home-system.png" alt="Whole House Carbon Filter" class="w-full max-w-xs mx-auto mb-4 rounded-xl" />
+          <div class="text-center">
+            <div class="text-white text-lg mb-2">Catalytic Carbon Media</div>
+            <div class="text-accent text-3xl font-bold">5-Year Warranty</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Advanced
+          <span class="gradient-text">Carbon Filtration</span>
+        </h2>
+        <p class="text-lg text-gray-600">
+          Catalytic carbon removes chlorine and chemicals through adsorption -
+          trapping contaminants in millions of microscopic pores.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {benefits.map((benefit) => (
+          <div class="bg-gray-50 rounded-2xl p-8 text-center">
+            <div class="text-5xl mb-4">{benefit.icon}</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{benefit.title}</h3>
+            <p class="text-gray-600">{benefit.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- What It Removes -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            What Carbon Filtration Removes
+          </h2>
+          <p class="text-gray-600 mb-8">
+            Catalytic carbon is specially designed to target chlorine and chloramines,
+            the disinfectants used in municipal water treatment that affect taste and health.
+          </p>
+
+          <div class="grid grid-cols-2 gap-4">
+            {removes.map((item) => (
+              <div class="flex items-center gap-2">
+                <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700">{item}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-xl">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">System Specifications</h3>
+          <div class="space-y-4">
+            {specs.map((spec) => (
+              <div class="flex justify-between py-3 border-b border-gray-100">
+                <span class="text-gray-600">{spec.label}</span>
+                <span class="font-semibold text-gray-900">{spec.value}</span>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-6 p-4 bg-yellow-50 rounded-lg border border-yellow-200">
+            <p class="text-yellow-800 text-sm">
+              <strong>Note:</strong> This system filters and conditions water but does NOT soften water.
+              For hard water, combine with a water softener.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Carbon vs Softener -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Carbon Filter vs Water Softener
+        </h2>
+        <p class="text-lg text-gray-600">
+          They do different jobs. Here's what each system addresses.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-primary/10 rounded-2xl p-8 border-2 border-primary">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Carbon Filter</h3>
+          <p class="text-gray-600 mb-4">Filters and conditions water without salt.</p>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+              Removes chlorine & chemicals
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+              Improves taste & odor
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+              No salt needed
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+              No electricity needed
+            </li>
+          </ul>
+          <div class="mt-6 p-4 bg-white rounded-xl">
+            <p class="text-sm text-gray-600"><strong>Does NOT remove:</strong> Hardness minerals</p>
+          </div>
+        </div>
+
+        <div class="bg-secondary/10 rounded-2xl p-8 border-2 border-secondary">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Water Softener</h3>
+          <p class="text-gray-600 mb-4">Removes hardness minerals using ion exchange.</p>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+              Removes calcium & magnesium
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+              Stops scale buildup
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+              Softer skin & hair
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-green-500 rounded-full"></span>
+              Protects appliances
+            </li>
+          </ul>
+          <div class="mt-6 p-4 bg-white rounded-xl">
+            <p class="text-sm text-gray-600"><strong>Does NOT remove:</strong> Chlorine & chemicals</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-12 text-center">
+        <p class="text-xl text-gray-700 mb-4"><strong>For complete protection, pair them together.</strong></p>
+        <a href="/products/complete-home-system" class="btn-primary">
+          View Complete Home System
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-20 bg-primary">
+    <div class="max-w-4xl mx-auto container-padding text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        Taste the Difference
+      </h2>
+      <p class="text-xl text-white/90 mb-8">
+        Get chlorine-free water from every tap in your home.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+19195551234" class="px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+          Call (919) 555-0123
+        </a>
+        <a href="/#contact" class="px-8 py-4 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition-colors">
+          Schedule Online
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema -->
+  <script type="application/ld+json" slot="head">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Whole House Carbon Filter",
+      "description": "Catalytic carbon whole house water filter for chlorine and chemical removal",
+      "brand": {
+        "@type": "Brand",
+        "name": "Raleigh Water Solutions"
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "USD",
+        "seller": {
+          "@type": "LocalBusiness",
+          "name": "Raleigh Water Solutions"
+        }
+      }
+    })}
+  </script>
+
+  <Footer />
+</Layout>
