@@ -3,40 +3,77 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 
-const categories = [
+const heroProducts = [
   {
-    name: 'Whole Home Systems',
-    description: 'Complete water treatment solutions that filter and soften water for your entire home.',
-    image: '/images/products/whole-home-filter.png',
-    products: [
-      { name: 'Complete Home System', href: '/products/complete-home-system', badge: 'Most Popular' },
-      { name: 'Softener + Carbon Filter', href: '/products/softener-with-carbon', badge: '2-in-1' },
-      { name: 'Single Tank Softener', href: '/products/single-tank-softener', badge: 'City Water' },
-      { name: 'Dual Tank Softener', href: '/products/dual-tank-softener', badge: 'Well Water' },
-      { name: 'Salt-Free Conditioner', href: '/products/salt-free-conditioner', badge: 'Eco-Friendly' },
-      { name: 'Carbon Filter Only', href: '/products/carbon-filter', badge: 'Chlorine Removal' },
-      { name: 'UV Sterilizer', href: '/products/uv-sterilizer', badge: 'Bacteria Free' },
+    name: 'HW800 AlkaPro',
+    subtitle: 'Tankless RO System',
+    description: '800 GPD tankless reverse osmosis with alkaline filtration. Fresh water on demand, no storage tank needed.',
+    image: '/images/products/tankless-ro.png',
+    badge: 'Most Popular',
+    href: '/products/tankless-ro',
+    features: [
+      '800 GPD Tankless RO System',
+      'Alkaline pH Balancing',
+      'Color Match Faucet Available',
+      'Quick-Change Filters',
+      'Space-Saving Design',
     ],
+    warranty: '5-Year Warranty',
   },
   {
-    name: 'Well Water Solutions',
-    description: 'Specialized systems designed to handle iron, sulfur, sediment, and bacteria in well water.',
+    name: '5-Stage RO System',
+    subtitle: 'Traditional Tank System',
+    description: '5-stage advanced filtration with storage tank. Proven reliability for crystal-clear drinking water.',
+    image: '/images/products/tankless-ro.png',
+    badge: 'Best Value',
+    href: '/products/reverse-osmosis',
+    features: [
+      '5-Stage Advanced Filtration',
+      '100 GPD Capacity',
+      'Storage Tank Included',
+      'Alkaline Option Available',
+      'NSF Certified Components',
+    ],
+    warranty: '5-Year Warranty',
+  },
+];
+
+const wholeHomeSystems = [
+  {
+    name: 'Complete Home System',
+    description: 'Whole-house filtration + softening in one system.',
     image: '/images/products/complete-home-system.png',
-    products: [
-      { name: 'Well Water System', href: '/products/well-water-system', badge: 'Complete' },
-      { name: 'Iron & Sulfur Filter', href: '/products/iron-sulfur-filter', badge: 'No Chemicals' },
-      { name: 'Pre-Sediment Filter', href: '/products/pre-sediment-filter', badge: 'Add-On' },
-    ],
+    badge: 'Best Seller',
+    href: '/products/complete-home-system',
   },
   {
-    name: 'Drinking Water Systems',
-    description: 'Reverse osmosis systems for crystal-clear, purified drinking water at your kitchen sink.',
-    image: '/images/products/ro-system.png',
-    products: [
-      { name: 'Tankless RO System', href: '/products/tankless-ro', badge: '800 GPD' },
-      { name: 'RO System', href: '/products/reverse-osmosis', badge: '5-Stage' },
-    ],
+    name: 'Softener + Carbon Filter',
+    description: '2-in-1 system for city water with chlorine.',
+    image: '/images/products/water-softener.png',
+    badge: '2-in-1',
+    href: '/products/softener-with-carbon',
   },
+  {
+    name: 'Single Tank Softener',
+    description: 'Efficient softening for city water homes.',
+    image: '/images/products/water-softener.png',
+    badge: 'City Water',
+    href: '/products/single-tank-softener',
+  },
+  {
+    name: 'Dual Tank Softener',
+    description: 'Continuous soft water for well water.',
+    image: '/images/products/water-softener.png',
+    badge: 'Well Water',
+    href: '/products/dual-tank-softener',
+  },
+];
+
+const faucetFinishes = [
+  { name: 'Chrome', class: 'bg-gradient-to-br from-gray-300 to-gray-500' },
+  { name: 'Brushed Nickel', class: 'bg-gradient-to-br from-gray-400 to-gray-600' },
+  { name: 'Matte Black', class: 'bg-gradient-to-br from-gray-800 to-black' },
+  { name: 'Brushed Gold', class: 'bg-gradient-to-br from-yellow-400 to-yellow-600' },
 ];
 
 const benefits = [
@@ -45,8 +82,6 @@ const benefits = [
   { icon: '🛡️', title: '5-Year Warranty', description: 'Complete coverage on all systems' },
   { icon: '💰', title: 'Best Price Guarantee', description: 'We beat any competitor quote' },
 ];
-
-const serviceAreas = ['Raleigh', 'Durham', 'Cary', 'Apex', 'Chapel Hill', 'Morrisville', 'Wake Forest', 'Garner'];
 ---
 
 <Layout
@@ -57,9 +92,8 @@ const serviceAreas = ['Raleigh', 'Durham', 'Cary', 'Apex', 'Chapel Hill', 'Morri
 
   <!-- Hero -->
   <section class="pt-32 pb-20 bg-gradient-to-br from-primary to-secondary relative overflow-hidden">
-    <!-- Background Pattern -->
-    <div class="absolute inset-0 opacity-10">
-      <div class="absolute top-0 left-0 w-full h-full" style="background-image: url('/images/products/complete-home-system.png'); background-size: 30%; background-repeat: repeat;"></div>
+    <div class="absolute inset-0 opacity-5">
+      <div class="absolute top-0 left-0 w-full h-full" style="background-image: url('/images/water-pattern.svg'); background-size: 200px;"></div>
     </div>
 
     <div class="max-w-7xl mx-auto container-padding relative z-10">
@@ -76,26 +110,19 @@ const serviceAreas = ['Raleigh', 'Durham', 'Cary', 'Apex', 'Chapel Hill', 'Morri
           Professional installation with 5-year warranty.
         </p>
 
-        <!-- Service Areas Pills -->
-        <div class="flex flex-wrap justify-center gap-2 mb-8">
-          {serviceAreas.map((area) => (
-            <span class="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm">{area}</span>
-          ))}
-        </div>
-
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#products" class="btn-primary bg-white text-primary hover:bg-gray-100 text-lg px-8 py-4">
-            Browse Systems
+          <a href="#drinking-water" class="btn-primary bg-white text-primary hover:bg-gray-100 text-lg px-8 py-4">
+            Drinking Water Systems
           </a>
-          <a href="tel:+19195551234" class="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-lg">
-            Call (919) 555-0123
+          <a href="#whole-home" class="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-lg">
+            Whole Home Systems
           </a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Benefits -->
+  <!-- Benefits Bar -->
   <section class="py-12 bg-white border-b">
     <div class="max-w-7xl mx-auto container-padding">
       <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -112,56 +139,223 @@ const serviceAreas = ['Raleigh', 'Durham', 'Cary', 'Apex', 'Chapel Hill', 'Morri
     </div>
   </section>
 
-  <!-- Product Categories -->
-  <section id="products" class="py-20 bg-gray-50">
+  <!-- Drinking Water Systems (Hero Products) -->
+  <section id="drinking-water" class="py-20 bg-white">
     <div class="max-w-7xl mx-auto container-padding">
       <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3">Drinking Water</span>
         <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
-          Choose Your
-          <span class="gradient-text">Water Solution</span>
+          Reverse Osmosis
+          <span class="gradient-text">Systems</span>
         </h2>
         <p class="text-lg text-gray-600">
-          Browse our complete selection of water treatment systems designed for Raleigh's unique water challenges.
+          Crystal-clear, purified drinking water right from your kitchen tap. Choose between tankless on-demand or traditional tank systems.
         </p>
       </div>
 
-      {categories.map((category) => (
-        <div class="mb-16">
-          <div class="flex items-center gap-4 mb-8">
-            <div class="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0">
-              <img src={category.image} alt={category.name} class="w-full h-full object-cover" />
-            </div>
-            <div>
-              <h3 class="text-2xl font-bold text-gray-900">{category.name}</h3>
-              <p class="text-gray-600">{category.description}</p>
+      <!-- Product Cards - Vertical Layout -->
+      <div class="space-y-12">
+        {heroProducts.map((product) => (
+          <div class="bg-white rounded-3xl shadow-xl border border-gray-100 overflow-hidden">
+            <div class="grid lg:grid-cols-2 gap-0">
+              <!-- Product Image -->
+              <div class="bg-gradient-to-br from-gray-50 to-gray-100 p-8 lg:p-12 flex items-center justify-center relative">
+                {product.badge && (
+                  <span class="absolute top-6 left-6 bg-primary text-white text-sm font-semibold px-4 py-2 rounded-full">
+                    {product.badge}
+                  </span>
+                )}
+                <img src={product.image} alt={product.name} class="w-full max-w-sm object-contain" />
+              </div>
+
+              <!-- Product Info -->
+              <div class="p-8 lg:p-12 flex flex-col justify-center">
+                <h3 class="text-sm text-primary font-semibold uppercase tracking-wider mb-2">{product.subtitle}</h3>
+                <h4 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">{product.name}</h4>
+                <p class="text-gray-600 text-lg mb-6">{product.description}</p>
+
+                <ul class="space-y-3 mb-8">
+                  {product.features.map((feature) => (
+                    <li class="flex items-center gap-3">
+                      <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                        <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                      </svg>
+                      <span class="text-gray-700">{feature}</span>
+                    </li>
+                  ))}
+                </ul>
+
+                <div class="flex flex-col sm:flex-row gap-4">
+                  <a href={product.href} class="btn-primary text-center">
+                    Learn More
+                  </a>
+                  <a href="tel:+19195551234" class="px-6 py-3 border-2 border-gray-200 text-gray-700 font-semibold rounded-lg hover:border-primary hover:text-primary transition-colors text-center">
+                    {product.warranty}
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
+        ))}
+      </div>
 
-          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {category.products.map((product) => (
-              <a href={product.href} class="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-primary">
-                <div class="flex items-center justify-between mb-3">
-                  <h4 class="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors">{product.name}</h4>
-                  {product.badge && (
-                    <span class="text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded-full">{product.badge}</span>
-                  )}
+      <!-- Faucet Finishes -->
+      <div class="mt-16">
+        <h3 class="text-xl font-bold text-center text-gray-900 mb-8">
+          Color Match Faucet To Your Appliances
+        </h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-6 max-w-3xl mx-auto">
+          {faucetFinishes.map((finish) => (
+            <div class="text-center">
+              <div class={`w-20 h-20 rounded-full mx-auto mb-3 shadow-lg ${finish.class}`}></div>
+              <span class="font-medium text-gray-700">{finish.name}</span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Whole Home Systems -->
+  <section id="whole-home" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3">Whole Home</span>
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          Water Softeners &
+          <span class="gradient-text">Filtration</span>
+        </h2>
+        <p class="text-lg text-gray-600">
+          Complete water treatment solutions for every tap in your home. Filter, soften, and protect your entire plumbing system.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        {wholeHomeSystems.map((product) => (
+          <a href={product.href} class="group bg-white rounded-2xl p-8 shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 hover:border-primary/50">
+            <div class="flex flex-col h-full">
+              <div class="flex items-start justify-between mb-6">
+                <div class="w-32 h-32 bg-gray-50 rounded-xl p-4 flex items-center justify-center">
+                  <img src={product.image} alt={product.name} class="w-full h-full object-contain group-hover:scale-105 transition-transform" />
                 </div>
-                <span class="text-sm text-gray-500 group-hover:text-primary flex items-center gap-1">
-                  Learn More
+                {product.badge && (
+                  <span class="bg-primary/10 text-primary text-xs font-semibold px-3 py-1 rounded-full">
+                    {product.badge}
+                  </span>
+                )}
+              </div>
+
+              <h3 class="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">{product.name}</h3>
+              <p class="text-gray-600 mb-6 flex-grow">{product.description}</p>
+
+              <div class="flex items-center justify-between pt-4 border-t border-gray-100">
+                <span class="text-primary font-semibold flex items-center gap-2">
+                  View Details
                   <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                   </svg>
                 </span>
+                <span class="text-sm text-gray-400">5-Year Warranty</span>
+              </div>
+            </div>
+          </a>
+        ))}
+      </div>
+
+      <!-- Additional Systems Link -->
+      <div class="mt-12 text-center">
+        <a href="#all-systems" class="inline-flex items-center gap-2 text-primary font-semibold hover:underline">
+          View All Whole Home Systems
+          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- All Systems Grid -->
+  <section id="all-systems" class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+          Complete Product
+          <span class="gradient-text">Catalog</span>
+        </h2>
+        <p class="text-lg text-gray-600">
+          Browse our full selection of water treatment solutions.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Well Water -->
+        <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Well Water Solutions</h3>
+          <ul class="space-y-3 mb-6">
+            <li>
+              <a href="/products/well-water-system" class="text-gray-700 hover:text-primary flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                Complete Well Water System
               </a>
-            ))}
-          </div>
+            </li>
+            <li>
+              <a href="/products/iron-sulfur-filter" class="text-gray-700 hover:text-primary flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                Iron & Sulfur Filter
+              </a>
+            </li>
+          </ul>
         </div>
-      ))}
+
+        <!-- Add-Ons -->
+        <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Add-Ons & Upgrades</h3>
+          <ul class="space-y-3 mb-6">
+            <li>
+              <a href="/products/pre-sediment-filter" class="text-gray-700 hover:text-primary flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                Pre-Sediment Filter
+              </a>
+            </li>
+            <li>
+              <a href="/products/uv-sterilizer" class="text-gray-700 hover:text-primary flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                UV Sterilizer
+              </a>
+            </li>
+            <li>
+              <a href="/products/carbon-filter" class="text-gray-700 hover:text-primary flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                Carbon Filter
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Specialized -->
+        <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-2xl p-8">
+          <h3 class="text-xl font-bold text-gray-900 mb-4">Specialty Systems</h3>
+          <ul class="space-y-3 mb-6">
+            <li>
+              <a href="/products/salt-free-conditioner" class="text-gray-700 hover:text-primary flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                Salt-Free Conditioner
+              </a>
+            </li>
+            <li>
+              <a href="/products/softener-with-carbon" class="text-gray-700 hover:text-primary flex items-center gap-2">
+                <span class="w-1.5 h-1.5 bg-primary rounded-full"></span>
+                Softener + Carbon Combo
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- Why Choose Us -->
-  <section class="py-20 bg-white">
+  <section class="py-20 bg-gray-50">
     <div class="max-w-7xl mx-auto container-padding">
       <div class="grid lg:grid-cols-2 gap-12 items-center">
         <div>
@@ -202,7 +396,7 @@ const serviceAreas = ['Raleigh', 'Durham', 'Cary', 'Apex', 'Chapel Hill', 'Morri
           </ul>
         </div>
 
-        <div class="bg-gray-50 rounded-2xl p-8">
+        <div class="bg-white rounded-2xl p-8 shadow-xl">
           <h3 class="text-2xl font-bold text-gray-900 mb-6">Get Your Free Quote</h3>
           <p class="text-gray-600 mb-6">
             Schedule your complimentary water test and consultation.

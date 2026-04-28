@@ -42,7 +42,7 @@ const products = [
     price: 1299,
     originalPrice: 1699,
     badge: null,
-    image: '/images/products/ro-system.png',
+    image: '/images/products/tankless-ro.png',
     features: [
       '100 GPD capacity',
       'Tankless design available',
@@ -147,6 +147,17 @@ const products = [
           </div>
         </a>
       ))}
+    </div>
+
+    <!-- View All Products Button -->
+    <div class="mt-12 text-center">
+      <a href="/products" class="btn-primary text-lg px-8 py-4 inline-flex items-center gap-2">
+        View All Products
+        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/>
+        </svg>
+      </a>
+      <p class="mt-4 text-gray-500 text-sm">Browse all 12+ water treatment solutions</p>
     </div>
 
     <!-- Trust Badges -->
