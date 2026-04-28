@@ -1,0 +1,320 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const benefits = [
+  {
+    title: 'No Salt Needed',
+    description: 'Never buy, lug, or refill salt bags again. Maintenance-free operation.',
+    icon: '🚫',
+  },
+  {
+    title: 'Eco-Friendly',
+    description: 'No salt discharge into wastewater. Better for the environment.',
+    icon: '🌿',
+  },
+  {
+    title: 'Preserves Minerals',
+    description: 'Keeps healthy calcium in your water while preventing scale buildup.',
+    icon: '💧',
+  },
+  {
+    title: 'No Electricity',
+    description: 'Works without power. No timers, no programming, no hassles.',
+    icon: '⚡',
+  },
+];
+
+const howItWorks = [
+  {
+    step: 'Template Assisted Crystallization',
+    description: 'Water flows through catalytic media that transforms hardness minerals into microscopic crystals.',
+  },
+  {
+    step: 'Scale Prevention',
+    description: 'These crystals remain suspended in water and won\'t adhere to pipes or fixtures.',
+  },
+  {
+    step: 'Mineral Retention',
+    description: 'Calcium and magnesium stay in the water for health benefits, but won\'t cause scale.',
+  },
+];
+
+const comparison = [
+  { feature: 'Removes hardness minerals', salt: 'Yes', saltFree: 'No - conditions them' },
+  { feature: 'Prevents scale buildup', salt: 'Yes', saltFree: 'Yes' },
+  { feature: 'Salty water feel', salt: 'Yes', saltFree: 'No' },
+  { feature: 'Adds sodium to water', salt: 'Yes', saltFree: 'No' },
+  { feature: 'Requires salt bags', salt: 'Yes', saltFree: 'No' },
+  { feature: 'Needs electricity', salt: 'Yes', saltFree: 'No' },
+  { feature: 'Maintenance', salt: 'Monthly salt addition', saltFree: 'Media replacement ~5 years' },
+  { feature: 'Best for', salt: 'Hard water + soft feel', saltFree: 'Scale prevention + eco-friendly' },
+];
+---
+
+<Layout
+  title="Salt Free Water Conditioner Raleigh | No-Salt Water Softener NC"
+  description="Salt-free water conditioner for Raleigh homes. No salt, no electricity, eco-friendly scale prevention. Maintenance-free water conditioning with 5-year warranty."
+>
+  <Navbar />
+
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-gradient-to-br from-primary to-secondary">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="inline-block bg-white/20 text-white text-sm font-medium px-4 py-1 rounded-full mb-4">Eco-Friendly</span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Salt-Free
+            <span class="text-accent">Water Conditioner</span>
+          </h1>
+          <p class="text-xl text-white/90 mb-8">
+            Scale prevention without salt. Eco-friendly water conditioning that preserves
+            healthy minerals while protecting your plumbing. No electricity required.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#contact" class="btn-primary bg-white text-primary hover:bg-gray-100">
+              Get Free Quote
+            </a>
+            <a href="tel:+19195551234" class="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-center">
+              Call (919) 555-0123
+            </a>
+          </div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+          <img src="/images/products/water-softener.png" alt="Salt-Free Water Conditioner" class="w-full max-w-xs mx-auto mb-4 rounded-xl" />
+          <div class="text-center">
+            <div class="text-white text-lg mb-2">No Salt Required</div>
+            <div class="text-accent text-3xl font-bold">5-Year Warranty</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          The Salt-Free
+          <span class="gradient-text">Advantage</span>
+        </h2>
+        <p class="text-lg text-gray-600">
+          Get the benefits of conditioned water without the hassles of traditional softeners.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {benefits.map((benefit) => (
+          <div class="bg-gray-50 rounded-2xl p-8 text-center">
+            <div class="text-5xl mb-4">{benefit.icon}</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{benefit.title}</h3>
+            <p class="text-gray-600">{benefit.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            How Salt-Free Conditioning Works
+          </h2>
+          <p class="text-gray-600 mb-8">
+            Salt-free conditioners use Template Assisted Crystallization (TAC) technology
+            to change the structure of hardness minerals without removing them.
+          </p>
+
+          <div class="space-y-6">
+            {howItWorks.map((item, index) => (
+              <div class="flex gap-4">
+                <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">{index + 1}</div>
+                <div>
+                  <h3 class="font-bold text-gray-900 mb-1">{item.step}</h3>
+                  <p class="text-gray-600">{item.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-xl">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">Technology Specs</h3>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-700"><strong>TAC Media:</strong> NSF certified catalytic beads</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-700"><strong>Capacity:</strong> Up to 25 grains per gallon hardness</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-700"><strong>Flow Rate:</strong> 15-20 GPM continuous</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-700"><strong>Media Life:</strong> 5-7 years before replacement</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-700"><strong>Tank:</strong> 10" x 54" NSF certified vessel</span>
+            </li>
+          </ul>
+
+          <div class="mt-8 p-4 bg-blue-50 rounded-xl">
+            <p class="text-blue-800 text-sm font-medium">💡 Important: Salt-free conditioners prevent scale but don't remove hardness. Water won't feel "soft" like with ion exchange systems.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison Table -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Salt vs Salt-Free:
+          <span class="gradient-text">Which is Right for You?</span>
+        </h2>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="text-left p-4 font-semibold">Feature</th>
+              <th class="text-left p-4 font-semibold text-primary">Salt Softener</th>
+              <th class="text-left p-4 font-semibold text-secondary">Salt-Free</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y">
+            {comparison.map((row) => (
+              <tr class="hover:bg-gray-50">
+                <td class="p-4 font-medium">{row.feature}</td>
+                <td class="p-4">{row.salt}</td>
+                <td class="p-4">{row.saltFree}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <div class="mt-8 grid md:grid-cols-2 gap-8">
+        <div class="bg-primary/10 rounded-2xl p-6">
+          <h3 class="text-xl font-bold text-primary mb-2">Choose Salt Softener If:</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• You want that silky soft water feel</li>
+            <li>• Severe hardness (15+ gpg)</li>
+            <li>• You want to use less soap</li>
+            <li>• You have very hard well water</li>
+          </ul>
+        </div>
+
+        <div class="bg-secondary/10 rounded-2xl p-6">
+          <h3 class="text-xl font-bold text-secondary mb-2">Choose Salt-Free If:</h3>
+          <ul class="space-y-2 text-gray-700">
+            <li>• You want maintenance-free operation</li>
+            <li>• You're on a low-sodium diet</li>
+            <li>• You care about environmental impact</li>
+            <li>• Moderate hardness (under 15 gpg)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Ideal For -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Perfect For
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-8 text-center shadow-sm">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">🏥</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Low-Sodium Diets</h3>
+          <p class="text-gray-600">No added sodium to your water. Safe for those monitoring salt intake.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 text-center shadow-sm">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">🌱</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Eco-Conscious Homes</h3>
+          <p class="text-gray-600">No salt discharge into wastewater. Better for plants and environment.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 text-center shadow-sm">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center text-3xl mx-auto mb-4">🔌</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Off-Grid Homes</h3>
+          <p class="text-gray-600">Works without electricity. Perfect for cabins, rural properties, and solar homes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-20 bg-primary">
+    <div class="max-w-4xl mx-auto container-padding text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        Go Salt-Free Today
+      </h2>
+      <p class="text-xl text-white/90 mb-8">
+        Get a free water test and find out if salt-free conditioning is right for your home.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+19195551234" class="px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+          Call (919) 555-0123
+        </a>
+        <a href="/#contact" class="px-8 py-4 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition-colors">
+          Schedule Online
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema -->
+  <script type="application/ld+json" slot="head">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Salt-Free Water Conditioner",
+      "description": "Eco-friendly salt-free water conditioner for scale prevention without salt",
+      "brand": {
+        "@type": "Brand",
+        "name": "Raleigh Water Solutions"
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "USD",
+        "seller": {
+          "@type": "LocalBusiness",
+          "name": "Raleigh Water Solutions"
+        }
+      }
+    })}
+  </script>
+
+  <Footer />
+</Layout>

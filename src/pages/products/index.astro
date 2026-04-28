@@ -3,127 +3,254 @@ import Layout from '../../layouts/Layout.astro';
 import Navbar from '../../components/Navbar.astro';
 import Footer from '../../components/Footer.astro';
 
-const products = [
+const categories = [
   {
-    name: 'Complete Home System',
-    description: 'The ultimate whole-house solution. Filtration + softening in one powerful system.',
-    image: '🏠',
-    badge: 'Most Popular',
-    features: ['Whole-home filtration', 'Water softening', 'Heavy metal removal', 'Lifetime warranty'],
-    href: '/products/complete-home-system',
+    name: 'Whole Home Systems',
+    description: 'Complete water treatment solutions that filter and soften water for your entire home.',
+    image: '/images/products/whole-home-filter.png',
+    products: [
+      { name: 'Complete Home System', href: '/products/complete-home-system', badge: 'Most Popular' },
+      { name: 'Single Tank Softener', href: '/products/single-tank-softener', badge: 'City Water' },
+      { name: 'Dual Tank Softener', href: '/products/dual-tank-softener', badge: 'Well Water' },
+      { name: 'Salt-Free Conditioner', href: '/products/salt-free-conditioner', badge: 'Eco-Friendly' },
+    ],
   },
   {
-    name: 'Water Softener Pro',
-    description: 'Eliminate hard water problems. Protect appliances and enjoy softer skin.',
-    image: '✨',
-    badge: 'Best Value',
-    features: ['75% less soap needed', 'Appliance protection', 'Salt-efficient', '10-year warranty'],
-    href: '/products/water-softener-pro',
+    name: 'Well Water Solutions',
+    description: 'Specialized systems designed to handle iron, sulfur, sediment, and bacteria in well water.',
+    image: '/images/products/complete-home-system.png',
+    products: [
+      { name: 'Well Water System', href: '/products/well-water-system', badge: 'Complete' },
+      { name: 'Iron & Sulfur Filter', href: '/products/iron-sulfur-filter', badge: 'No Chemicals' },
+      { name: 'Pre-Sediment Filter', href: '/products/pre-sediment-filter', badge: 'Add-On' },
+    ],
   },
   {
-    name: 'Reverse Osmosis System',
-    description: 'Crystal-clear drinking water from your kitchen tap. 99% contaminant removal.',
-    image: '💧',
-    badge: null,
-    features: ['5-stage filtration', '100 GPD capacity', 'Alkaline option', '5-year warranty'],
-    href: '/products/reverse-osmosis',
-  },
-  {
-    name: 'Pre-Sediment Filter',
-    description: 'First line of defense against rust, sand, and debris. Protects your plumbing.',
-    image: '🛡️',
-    badge: 'Add-On',
-    features: ['Whole-house protection', 'Easy filter changes', 'No pressure loss', '1-year warranty'],
-    href: '/products/pre-sediment-filter',
+    name: 'Drinking Water Systems',
+    description: 'Reverse osmosis systems for crystal-clear, purified drinking water at your kitchen sink.',
+    image: '/images/products/ro-system.png',
+    products: [
+      { name: 'Tankless RO System', href: '/products/tankless-ro', badge: '800 GPD' },
+      { name: 'RO System', href: '/products/reverse-osmosis', badge: '5-Stage' },
+    ],
   },
 ];
+
+const benefits = [
+  { icon: '🔬', title: 'Free Water Testing', description: 'We test your water and recommend the perfect system' },
+  { icon: '⚡', title: 'Same-Week Installation', description: 'Professional installation in 2-4 hours' },
+  { icon: '🛡️', title: '5-Year Warranty', description: 'Complete coverage on all systems' },
+  { icon: '💰', title: 'Best Price Guarantee', description: 'We beat any competitor quote' },
+];
+
+const serviceAreas = ['Raleigh', 'Durham', 'Cary', 'Apex', 'Chapel Hill', 'Morrisville', 'Wake Forest', 'Garner'];
 ---
 
 <Layout
-  title="Water Filtration Products | Raleigh Water Solutions"
-  description="Professional water filtration and softening systems for Raleigh homes. Whole house systems, water softeners, reverse osmosis, and sediment filters. Free installation."
+  title="Water Filtration Systems Raleigh | Whole House, Softener & RO NC"
+  description="Professional water filtration systems in Raleigh. Whole house filters, water softeners, RO systems, and well water treatment. Free water testing and 5-year warranty."
 >
   <Navbar />
 
-  <section class="pt-32 pb-20 bg-gradient-to-br from-primary to-secondary">
-    <div class="max-w-7xl mx-auto container-padding text-center">
-      <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
-        Our Water
-        <span class="text-accent">Solutions</span>
-      </h1>
-      <p class="text-xl text-white/90 max-w-3xl mx-auto">
-        Professional-grade systems designed for Raleigh's hard water.
-        Installed by local experts with lifetime support.
-      </p>
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-gradient-to-br from-primary to-secondary relative overflow-hidden">
+    <!-- Background Pattern -->
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-0 left-0 w-full h-full" style="background-image: url('/images/products/complete-home-system.png'); background-size: 30%; background-repeat: repeat;"></div>
     </div>
-  </section>
 
-  <section class="py-20 bg-white">
-    <div class="max-w-7xl mx-auto container-padding">
-      <div class="grid lg:grid-cols-2 gap-8">
-        {products.map((product) => (
-          <a href={product.href} class={`group relative bg-white rounded-2xl p-8 border-2 ${product.badge ? 'border-primary' : 'border-gray-100'} hover:border-primary hover:shadow-xl transition-all duration-300 block`}>
-            {product.badge && (
-              <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-sm font-semibold px-4 py-1 rounded-full">
-                {product.badge}
-              </div>
-            )}
+    <div class="max-w-7xl mx-auto container-padding relative z-10">
+      <div class="text-center max-w-4xl mx-auto">
+        <span class="inline-block bg-white/20 text-white text-sm font-medium px-4 py-2 rounded-full mb-6">Save up to 40% - Limited Time</span>
 
-            <div class="flex flex-col h-full">
-              <div class="text-6xl mb-4">{product.image}</div>
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+          Water Filtration Systems for
+          <span class="text-accent">Raleigh Homes</span>
+        </h1>
 
-              <h2 class="text-2xl font-bold text-gray-900 mb-2 group-hover:text-primary transition-colors">
-                {product.name}
-              </h2>
-              <p class="text-gray-600 mb-6">{product.description}</p>
-
-              <ul class="space-y-2 mb-6 flex-1">
-                {product.features.map((feature) => (
-                  <li class="flex items-center gap-2 text-gray-700">
-                    <svg class="w-5 h-5 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
-                      <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
-                    </svg>
-                    <span class="text-sm">{feature}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <div class="flex items-center justify-between pt-6 border-t border-gray-100">
-                <span class="text-primary font-semibold flex items-center gap-1">
-                  Learn More
-                  <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
-                  </svg>
-                </span>
-                <span class="text-green-600 text-sm font-medium">Free Quote →</span>
-              </div>
-            </div>
-          </a>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <section class="py-20 bg-gray-50">
-    <div class="max-w-7xl mx-auto container-padding">
-      <div class="bg-primary rounded-3xl p-12 text-center text-white">
-        <h2 class="text-3xl md:text-4xl font-bold mb-4">
-          Not Sure Which System You Need?
-        </h2>
         <p class="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-          Get a free in-home water test and personalized recommendation from our local experts.
+          Whole house systems, water softeners, reverse osmosis, and well water treatment.
+          Professional installation with 5-year warranty.
         </p>
+
+        <!-- Service Areas Pills -->
+        <div class="flex flex-wrap justify-center gap-2 mb-8">
+          {serviceAreas.map((area) => (
+            <span class="px-4 py-2 bg-white/20 backdrop-blur-sm rounded-full text-white text-sm">{area}</span>
+          ))}
+        </div>
+
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="tel:+19195551234" class="px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors">
-            Call (919) 555-0123
+          <a href="#products" class="btn-primary bg-white text-primary hover:bg-gray-100 text-lg px-8 py-4">
+            Browse Systems
           </a>
-          <a href="/#contact" class="px-8 py-4 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition-colors">
-            Schedule Free Test
+          <a href="tel:+19195551234" class="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-lg">
+            Call (919) 555-0123
           </a>
         </div>
       </div>
     </div>
   </section>
+
+  <!-- Benefits -->
+  <section class="py-12 bg-white border-b">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {benefits.map((benefit) => (
+          <div class="flex items-center gap-4">
+            <div class="text-3xl">{benefit.icon}</div>
+            <div>
+              <h3 class="font-bold text-gray-900">{benefit.title}</h3>
+              <p class="text-sm text-gray-600">{benefit.description}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Product Categories -->
+  <section id="products" class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl lg:text-5xl font-bold text-gray-900 mb-6">
+          Choose Your
+          <span class="gradient-text">Water Solution</span>
+        </h2>
+        <p class="text-lg text-gray-600">
+          Browse our complete selection of water treatment systems designed for Raleigh's unique water challenges.
+        </p>
+      </div>
+
+      {categories.map((category) => (
+        <div class="mb-16">
+          <div class="flex items-center gap-4 mb-8">
+            <div class="w-16 h-16 rounded-2xl overflow-hidden flex-shrink-0">
+              <img src={category.image} alt={category.name} class="w-full h-full object-cover" />
+            </div>
+            <div>
+              <h3 class="text-2xl font-bold text-gray-900">{category.name}</h3>
+              <p class="text-gray-600">{category.description}</p>
+            </div>
+          </div>
+
+          <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+            {category.products.map((product) => (
+              <a href={product.href} class="group bg-white rounded-xl p-6 shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 hover:border-primary">
+                <div class="flex items-center justify-between mb-3">
+                  <h4 class="text-lg font-bold text-gray-900 group-hover:text-primary transition-colors">{product.name}</h4>
+                  {product.badge && (
+                    <span class="text-xs font-semibold text-primary bg-primary/10 px-2 py-1 rounded-full">{product.badge}</span>
+                  )}
+                </div>
+                <span class="text-sm text-gray-500 group-hover:text-primary flex items-center gap-1">
+                  Learn More
+                  <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
+                  </svg>
+                </span>
+              </a>
+            ))}
+          </div>
+        </div>
+      ))}
+    </div>
+  </section>
+
+  <!-- Why Choose Us -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="inline-block text-primary font-semibold text-sm uppercase tracking-wider mb-3">Why Raleigh Water Solutions</span>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Raleigh's Most Trusted
+            <span class="gradient-text">Water Treatment Experts</span>
+          </h2>
+          <p class="text-gray-600 mb-6">
+            We've served over 500 homes in the Triangle area. Our local expertise means we
+            understand Raleigh's water challenges - from municipal chlorine to well water iron.
+          </p>
+          <ul class="space-y-4">
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-700"><strong>Local Experts:</strong> Born and raised in the Triangle</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-700"><strong>5-Year Warranty:</strong> Complete coverage on all systems</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-700"><strong>Free Water Testing:</strong> Comprehensive analysis included</span>
+            </li>
+            <li class="flex items-start gap-3">
+              <svg class="w-6 h-6 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+              </svg>
+              <span class="text-gray-700"><strong>Best Price Guarantee:</strong> We beat any competitor's price</span>
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">Get Your Free Quote</h3>
+          <p class="text-gray-600 mb-6">
+            Schedule your complimentary water test and consultation.
+            We'll analyze your water and recommend the perfect system.
+          </p>
+
+          <a href="tel:+19195551234" class="btn-primary w-full text-center block mb-4">
+            Call (919) 555-0123
+          </a>
+
+          <a href="/#contact" class="btn-outline w-full text-center block">
+            Schedule Online
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema -->
+  <script type="application/ld+json" slot="head">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "ItemList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Whole House Water Filtration",
+          "url": "/products/complete-home-system"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Water Softener Systems",
+          "url": "/products/water-softener-pro"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Reverse Osmosis Systems",
+          "url": "/products/reverse-osmosis"
+        },
+        {
+          "@type": "ListItem",
+          "position": 4,
+          "name": "Well Water Treatment",
+          "url": "/products/well-water-system"
+        }
+      ]
+    })}
+  </script>
 
   <Footer />
 </Layout>

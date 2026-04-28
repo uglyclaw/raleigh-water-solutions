@@ -1,0 +1,320 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const specs = [
+  { label: 'Grain Capacity', value: '48,000 grains' },
+  { label: 'Flow Rate', value: '12-15 GPM' },
+  { label: 'Resin Type', value: 'High-capacity ion exchange' },
+  { label: 'Valve', value: 'Digital demand-initiated' },
+  { label: 'Tank Size', value: '10" x 54"' },
+  { label: 'Warranty', value: '5-year warranty' },
+];
+
+const features = [
+  {
+    title: 'Digital Control Head',
+    description: 'Smart metered regeneration based on actual water usage, not time. Saves salt and water.',
+    icon: '📊',
+  },
+  {
+    title: 'Premium Resin',
+    description: 'WQA Gold Seal certified ion exchange resin for maximum hardness removal.',
+    icon: '✨',
+  },
+  {
+    title: 'Salt Efficient',
+    description: 'Uses up to 40% less salt than timer-based systems. Saves money and maintenance.',
+    icon: '💰',
+  },
+  {
+    title: 'Compact Design',
+    description: 'Perfect for homes with limited space. Single tank footprint with full performance.',
+    icon: '🏠',
+  },
+];
+---
+
+<Layout
+  title="Single Tank Water Softener Raleigh | City Water Softening System NC"
+  description="Single tank water softener for city water in Raleigh. Digital controls, premium resin, 5-year warranty. Perfect for homes with municipal water. Free installation."
+>
+  <Navbar />
+
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-gradient-to-br from-primary to-secondary">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="inline-block bg-white/20 text-white text-sm font-medium px-4 py-1 rounded-full mb-4">City Water</span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Single Tank
+            <span class="text-accent">Water Softener</span>
+          </h1>
+          <p class="text-xl text-white/90 mb-8">
+            The perfect softening solution for city water homes. Digital controls,
+            premium resin, and efficient salt usage in a compact single-tank design.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#contact" class="btn-primary bg-white text-primary hover:bg-gray-100">
+              Get Free Quote
+            </a>
+            <a href="tel:+19195551234" class="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-center">
+              Call (919) 555-0123
+            </a>
+          </div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+          <img src="/images/products/water-softener.png" alt="Single Tank Water Softener" class="w-full max-w-xs mx-auto mb-4 rounded-xl" />
+          <div class="text-center">
+            <div class="text-white text-lg mb-2">Perfect for City Water</div>
+            <div class="text-accent text-3xl font-bold">5-Year Warranty</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Smart Softening for
+          <span class="gradient-text">City Water Homes</span>
+        </h2>
+        <p class="text-lg text-gray-600">
+          Designed specifically for municipal water supplies. Removes hardness while
+          working efficiently with chlorinated city water.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {features.map((feature) => (
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="text-4xl mb-4">{feature.icon}</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
+            <p class="text-gray-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            How Single Tank Softening Works
+          </h2>
+
+          <div class="space-y-6">
+            <div class="flex gap-4">
+              <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">1</div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">Water Enters</h3>
+                <p class="text-gray-600">Hard city water flows into the resin tank containing thousands of ion exchange resin beads.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">2</div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">Ion Exchange</h3>
+                <p class="text-gray-600">Calcium and magnesium ions (hardness) attach to resin beads, releasing sodium ions into the water.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">3</div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">Soft Water Output</h3>
+                <p class="text-gray-600">Softened water flows throughout your home - no scale buildup, silky feel on skin.</p>
+              </div>
+            </div>
+
+            <div class="flex gap-4">
+              <div class="w-10 h-10 bg-primary rounded-full flex items-center justify-center text-white font-bold flex-shrink-0">4</div>
+              <div>
+                <h3 class="font-bold text-gray-900 mb-1">Smart Regeneration</h3>
+                <p class="text-gray-600">Digital meter tracks usage and regenerates only when needed - saves salt and water.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-xl">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">System Specifications</h3>
+          <div class="space-y-4">
+            {specs.map((spec) => (
+              <div class="flex justify-between py-3 border-b border-gray-100">
+                <span class="text-gray-600">{spec.label}</span>
+                <span class="font-semibold text-gray-900">{spec.value}</span>
+              </div>
+            ))}
+          </div>
+
+          <div class="mt-8 p-4 bg-primary/10 rounded-xl">
+            <p class="text-primary text-sm font-medium">
+              <strong>Best For:</strong> City water homes up to 4 people, 2-3 bathrooms, moderate hardness (7-12 gpg).
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Benefits You'll Notice
+          <span class="gradient-text">Immediately</span>
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="text-center">
+          <div class="w-20 h-20 bg-green-100 rounded-2xl flex items-center justify-center text-4xl mx-auto mb-4">🧴</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">75% Less Soap</h3>
+          <p class="text-gray-600">Soft water lathers instantly. You'll use far less soap, shampoo, and detergent.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-20 h-20 bg-blue-100 rounded-2xl flex items-center justify-center text-4xl mx-auto mb-4">👕</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Brighter Clothes</h3>
+          <p class="text-gray-600">No mineral buildup in fabrics. Colors stay vibrant, whites stay white.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-20 h-20 bg-purple-100 rounded-2xl flex items-center justify-center text-4xl mx-auto mb-4">🔧</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Protected Appliances</h3>
+          <p class="text-gray-600">Water heaters, dishwashers, and washing machines last 30% longer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Compare to Dual Tank -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Single Tank vs Dual Tank
+        </h2>
+        <p class="text-lg text-gray-600">
+          Not sure which is right for you? Here's how they compare.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-primary">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Single Tank</h3>
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-center gap-2 text-gray-700">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Lower upfront cost
+            </li>
+            <li class="flex items-center gap-2 text-gray-700">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Compact footprint
+            </li>
+            <li class="flex items-center gap-2 text-gray-700">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Perfect for city water
+            </li>
+            <li class="flex items-center gap-2 text-gray-700">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Good for 2-4 people
+            </li>
+          </ul>
+          <div class="text-center">
+            <span class="text-sm text-gray-500">Best for:</span>
+            <p class="font-semibold text-gray-900">City water, smaller homes</p>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg border-2 border-gray-200">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Dual Tank</h3>
+          <ul class="space-y-3 mb-6">
+            <li class="flex items-center gap-2 text-gray-700">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              24/7 soft water (no downtime)
+            </li>
+            <li class="flex items-center gap-2 text-gray-700">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Higher capacity
+            </li>
+            <li class="flex items-center gap-2 text-gray-700">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Better for well water
+            </li>
+            <li class="flex items-center gap-2 text-gray-700">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Good for 4+ people
+            </li>
+          </ul>
+          <div class="text-center">
+            <span class="text-sm text-gray-500">Best for:</span>
+            <p class="font-semibold text-gray-900">Well water, large families</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="mt-8 text-center">
+        <a href="/products/dual-tank-softener" class="text-primary font-semibold hover:underline">
+          Learn About Dual Tank Systems →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-20 bg-primary">
+    <div class="max-w-4xl mx-auto container-padding text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        Get Your Free Water Test
+      </h2>
+      <p class="text-xl text-white/90 mb-8">
+        We'll test your water hardness and recommend the perfect system for your home.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+19195551234" class="px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+          Call (919) 555-0123
+        </a>
+        <a href="/#contact" class="px-8 py-4 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition-colors">
+          Schedule Online
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema -->
+  <script type="application/ld+json" slot="head">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Single Tank Water Softener",
+      "description": "Digital single tank water softener for city water homes in Raleigh",
+      "brand": {
+        "@type": "Brand",
+        "name": "Raleigh Water Solutions"
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "USD",
+        "seller": {
+          "@type": "LocalBusiness",
+          "name": "Raleigh Water Solutions"
+        }
+      }
+    })}
+  </script>
+
+  <Footer />
+</Layout>

@@ -1,0 +1,307 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const specs = [
+  { label: 'Daily Production', value: '800 GPD' },
+  { label: 'Flow Rate', value: '0.5 GPM continuous' },
+  { label: 'Filtration Stages', value: '4-stage + Alkaline' },
+  { label: 'Storage', value: 'Tankless - on demand' },
+  { label: 'Faucet Options', value: 'Chrome, Nickel, Black, Gold' },
+  { label: 'Replacement', value: 'Quick-change cartridges' },
+  { label: 'Warranty', value: '5-year warranty' },
+];
+
+const features = [
+  {
+    title: 'Tankless Design',
+    description: 'No storage tank taking up cabinet space. Fresh water on demand, every time.',
+    icon: '💧',
+  },
+  {
+    title: '800 GPD Capacity',
+    description: 'High-output membrane produces up to 800 gallons per day - enough for any family.',
+    icon: '⚡',
+  },
+  {
+    title: 'Alkaline Boost',
+    description: 'Adds healthy minerals back to raise pH and improve taste.',
+    icon: '⚖️',
+  },
+  {
+    title: 'Quick-Change Filters',
+    description: 'Change filters in seconds without tools. Color-coded for easy identification.',
+    icon: '🔧',
+  },
+];
+
+const stages = [
+  { stage: 'Stage 1', name: 'Sediment Filter', purpose: 'Removes sand, rust, and particles' },
+  { stage: 'Stage 2', name: 'Carbon Block', purpose: 'Removes chlorine, taste, and odor' },
+  { stage: 'Stage 3', name: 'RO Membrane', purpose: 'Removes 99% of dissolved solids' },
+  { stage: 'Stage 4', name: 'Alkaline Filter', purpose: 'Adds minerals, raises pH' },
+];
+
+const comparisons = [
+  { feature: 'Storage tank', tankless: 'None - direct flow', tank: '3-4 gallon tank' },
+  { feature: 'Wait time', tankless: 'None', tank: 'May empty with heavy use' },
+  { feature: 'Daily capacity', tankless: '800 gallons', tank: '50-75 gallons' },
+  { feature: 'Cabinet space', tankless: 'Compact', tank: 'Tank + filters' },
+  { feature: 'Water freshness', tankless: 'Always fresh', tank: 'Sits in tank' },
+  { feature: 'Best for', tankless: 'High usage, large families', tank: 'Standard households' },
+];
+---
+
+<Layout
+  title="Tankless Reverse Osmosis System Raleigh | 800 GPD RO NC"
+  description="Tankless RO system for Raleigh homes. 800 GPD capacity, alkaline filtration, no storage tank. Crystal clear drinking water on demand with 5-year warranty."
+>
+  <Navbar />
+
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-gradient-to-br from-primary to-secondary">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="inline-block bg-white/20 text-white text-sm font-medium px-4 py-1 rounded-full mb-4">Tankless Technology</span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Tankless RO
+            <span class="text-accent">System</span>
+          </h1>
+          <p class="text-xl text-white/90 mb-8">
+            800 gallons per day of pure, alkaline drinking water. No tank, no waiting,
+            no limits. The future of home water purification is here.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#contact" class="btn-primary bg-white text-primary hover:bg-gray-100">
+              Get Free Quote
+            </a>
+            <a href="tel:+19195551234" class="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-center">
+              Call (919) 555-0123
+            </a>
+          </div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+          <img src="/images/products/ro-system.png" alt="Tankless RO System" class="w-full max-w-xs mx-auto mb-4 rounded-xl" />
+          <div class="text-center">
+            <div class="text-white text-lg mb-2">800 GPD Capacity</div>
+            <div class="text-accent text-3xl font-bold">5-Year Warranty</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Why Go
+          <span class="gradient-text">Tankless?</span>
+        </h2>
+        <p class="text-lg text-gray-600">
+          Traditional RO systems store water in a tank. Our tankless system produces
+          purified water on demand - fresher, faster, and more convenient.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {features.map((feature) => (
+          <div class="bg-gray-50 rounded-2xl p-8 text-center">
+            <div class="text-5xl mb-4">{feature.icon}</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
+            <p class="text-gray-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Filtration Process -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          4-Stage Filtration + Alkaline
+        </h2>
+        <p class="text-lg text-gray-600">
+          Advanced purification with healthy mineral addition.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        {stages.map((item) => (
+          <div class="bg-white rounded-2xl p-6 shadow-lg">
+            <div class="text-sm font-semibold text-primary mb-2">{item.stage}</div>
+            <h3 class="text-lg font-bold text-gray-900 mb-2">{item.name}</h3>
+            <p class="text-gray-600 text-sm">{item.purpose}</p>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-8 bg-blue-50 rounded-2xl p-8">
+        <h3 class="text-xl font-bold text-gray-900 mb-4">What It Removes</h3>
+        <div class="grid md:grid-cols-4 gap-4">
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 bg-primary rounded-full"></span>
+            <span class="text-gray-700">Lead & Mercury</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 bg-primary rounded-full"></span>
+            <span class="text-gray-700">Chlorine & Chloramines</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 bg-primary rounded-full"></span>
+            <span class="text-gray-700">Fluoride</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 bg-primary rounded-full"></span>
+            <span class="text-gray-700">Nitrates</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 bg-primary rounded-full"></span>
+            <span class="text-gray-700">Arsenic</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 bg-primary rounded-full"></span>
+            <span class="text-gray-700">PFOA/PFOS</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 bg-primary rounded-full"></span>
+            <span class="text-gray-700">Pharmaceuticals</span>
+          </div>
+          <div class="flex items-center gap-2">
+            <span class="w-2 h-2 bg-primary rounded-full"></span>
+            <span class="text-gray-700">Bacteria & Viruses</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Comparison -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Tankless vs Traditional RO
+        </h2>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="w-full">
+          <thead>
+            <tr class="bg-gray-100">
+              <th class="text-left p-4 font-semibold">Feature</th>
+              <th class="text-left p-4 font-semibold text-primary">Tankless RO</th>
+              <th class="text-left p-4 font-semibold text-gray-600">Tank RO</th>
+            </tr>
+          </thead>
+          <tbody class="divide-y">
+            {comparisons.map((row) => (
+              <tr class="hover:bg-gray-50">
+                <td class="p-4 font-medium">{row.feature}</td>
+                <td class="p-4 text-primary font-medium">{row.tankless}</td>
+                <td class="p-4 text-gray-600">{row.tank}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specs -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">System Specifications</h3>
+          <div class="space-y-4">
+            {specs.map((spec) => (
+              <div class="flex justify-between py-3 border-b border-gray-100">
+                <span class="text-gray-600">{spec.label}</span>
+                <span class="font-semibold text-gray-900">{spec.value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">Faucet Finishes</h3>
+          <div class="grid grid-cols-2 gap-4">
+            <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
+              <div class="w-8 h-8 rounded-full bg-gradient-to-br from-gray-300 to-gray-500"></div>
+              <span class="font-medium">Chrome</span>
+            </div>
+            <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
+              <div class="w-8 h-8 rounded-full bg-gradient-to-br from-gray-400 to-gray-600"></div>
+              <span class="font-medium">Brushed Nickel</span>
+            </div>
+            <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
+              <div class="w-8 h-8 rounded-full bg-gradient-to-br from-gray-800 to-black"></div>
+              <span class="font-medium">Matte Black</span>
+            </div>
+            <div class="flex items-center gap-3 p-4 bg-gray-50 rounded-xl">
+              <div class="w-8 h-8 rounded-full bg-gradient-to-br from-yellow-400 to-yellow-600"></div>
+              <span class="font-medium">Brushed Gold</span>
+            </div>
+          </div>
+
+          <div class="mt-8 p-4 bg-green-50 rounded-xl">
+            <p class="text-green-800 text-sm">
+              <strong>Filter Replacement Schedule:</strong> Sediment & carbon filters: 6-12 months. RO membrane: 2-3 years. Alkaline: 6-12 months.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-20 bg-primary">
+    <div class="max-w-4xl mx-auto container-padding text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        Upgrade to Tankless Today
+      </h2>
+      <p class="text-xl text-white/90 mb-8">
+        Get unlimited fresh, purified water with our tankless RO system.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+19195551234" class="px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+          Call (919) 555-0123
+        </a>
+        <a href="/#contact" class="px-8 py-4 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition-colors">
+          Schedule Free Test
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema -->
+  <script type="application/ld+json" slot="head">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Tankless Reverse Osmosis System",
+      "description": "800 GPD tankless reverse osmosis drinking water system with alkaline filtration",
+      "brand": {
+        "@type": "Brand",
+        "name": "Raleigh Water Solutions"
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "USD",
+        "seller": {
+          "@type": "LocalBusiness",
+          "name": "Raleigh Water Solutions"
+        }
+      }
+    })}
+  </script>
+
+  <Footer />
+</Layout>

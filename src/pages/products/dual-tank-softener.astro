@@ -1,0 +1,280 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const specs = [
+  { label: 'Grain Capacity', value: '80,000 grains' },
+  { label: 'Flow Rate', value: '18-22 GPM' },
+  { label: 'Tank Configuration', value: 'Twin alternating' },
+  { label: 'Resin Type', value: 'High-capacity ion exchange' },
+  { label: 'Valve', value: 'Digital demand-initiated' },
+  { label: 'Warranty', value: '5-year warranty' },
+];
+
+const features = [
+  {
+    title: '24/7 Soft Water',
+    description: 'One tank regenerates while the other supplies soft water. Never run out, even with heavy usage.',
+    icon: '⚡',
+  },
+  {
+    title: 'High Capacity',
+    description: '80,000 grain capacity handles large families, high water usage, and extremely hard water.',
+    icon: '💪',
+  },
+  {
+    title: 'Well Water Ready',
+    description: 'Built to handle the demands of well water: iron, sediment, and extremely high hardness.',
+    icon: '🏡',
+  },
+  {
+    title: 'Smart Efficiency',
+    description: 'Alternating tank design uses less salt and water than single-tank systems.',
+    icon: '🌿',
+  },
+];
+
+const idealFor = [
+  'Homes with 4+ people',
+  'Well water with high hardness',
+  'Large homes with 3+ bathrooms',
+  'High water usage households',
+  'Home businesses (daycares, etc.)',
+  'Iron and sediment issues',
+];
+---
+
+<Layout
+  title="Dual Tank Water Softener Raleigh | Twin Tank Softening System NC"
+  description="Dual tank water softener for well water and large homes in Raleigh. 24/7 soft water, 80,000 grain capacity, 5-year warranty. Perfect for high usage and well water."
+>
+  <Navbar />
+
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-gradient-to-br from-primary to-secondary">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="inline-block bg-white/20 text-white text-sm font-medium px-4 py-1 rounded-full mb-4">Well Water Specialist</span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Dual Tank
+            <span class="text-accent">Water Softener</span>
+          </h1>
+          <p class="text-xl text-white/90 mb-8">
+            Never run out of soft water again. Twin alternating tanks provide
+            continuous softening for large families and well water homes.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#contact" class="btn-primary bg-white text-primary hover:bg-gray-100">
+              Get Free Quote
+            </a>
+            <a href="tel:+19195551234" class="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-center">
+              Call (919) 555-0123
+            </a>
+          </div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+          <img src="/images/products/complete-home-system.png" alt="Dual Tank Water Softener" class="w-full max-w-xs mx-auto mb-4 rounded-xl" />
+          <div class="text-center">
+            <div class="text-white text-lg mb-2">Continuous Soft Water</div>
+            <div class="text-accent text-3xl font-bold">5-Year Warranty</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Why Choose a
+          <span class="gradient-text">Dual Tank System?</span>
+        </h2>
+        <p class="text-lg text-gray-600">
+          When you can't afford to run out of soft water, dual tank is the answer.
+          Perfect for well water, large families, and high-demand homes.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        {features.map((feature) => (
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <div class="text-4xl mb-4">{feature.icon}</div>
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{feature.title}</h3>
+            <p class="text-gray-600">{feature.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- How It Works -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          How Dual Tank Technology Works
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-white text-2xl font-bold mb-4">1</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Tank A in Service</h3>
+          <p class="text-gray-600">Hard water flows through Tank A while Tank B stands by fully charged and ready.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-white text-2xl font-bold mb-4">2</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Seamless Switch</h3>
+          <p class="text-gray-600">When Tank A needs regeneration, the system instantly switches to Tank B. You never notice.</p>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <div class="w-16 h-16 bg-primary rounded-2xl flex items-center justify-center text-white text-2xl font-bold mb-4">3</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Continuous Supply</h3>
+          <p class="text-gray-600">While Tank B supplies soft water, Tank A regenerates. Then they alternate again.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Specs & Ideal For -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid lg:grid-cols-2 gap-12">
+        <div class="bg-gray-50 rounded-2xl p-8">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">System Specifications</h3>
+          <div class="space-y-4">
+            {specs.map((spec) => (
+              <div class="flex justify-between py-3 border-b border-gray-200">
+                <span class="text-gray-600">{spec.label}</span>
+                <span class="font-semibold text-gray-900">{spec.value}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="bg-gray-50 rounded-2xl p-8">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6">Ideal For</h3>
+          <ul class="space-y-3">
+            {idealFor.map((item) => (
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                </svg>
+                <span class="text-gray-700">{item}</span>
+              </li>
+            ))}
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- City vs Well -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          City Water vs Well Water Systems
+        </h2>
+        <p class="text-lg text-gray-600">
+          We offer optimized versions for your water source.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">City Water Dual Tank</h3>
+          <p class="text-gray-600 mb-4">
+            Optimized for municipal water. Pre-configured for chlorine resistance and standard hardness levels.
+          </p>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full"></span>
+              Chlorine-resistant resin
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full"></span>
+              Standard capacity
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full"></span>
+              No pre-filtration needed
+            </li>
+          </ul>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-lg">
+          <h3 class="text-2xl font-bold text-gray-900 mb-4">Well Water Dual Tank</h3>
+          <p class="text-gray-600 mb-4">
+            Built for well water challenges. Handles iron, sediment, and extreme hardness with ease.
+          </p>
+          <ul class="space-y-2 text-gray-700">
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full"></span>
+              Iron-resistant resin
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full"></span>
+              Extra capacity
+            </li>
+            <li class="flex items-center gap-2">
+              <span class="w-2 h-2 bg-primary rounded-full"></span>
+              Sediment pre-filter included
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-20 bg-primary">
+    <div class="max-w-4xl mx-auto container-padding text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        Ready for Unlimited Soft Water?
+      </h2>
+      <p class="text-xl text-white/90 mb-8">
+        Get a free water analysis and custom quote for your dual tank system.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+19195551234" class="px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+          Call (919) 555-0123
+        </a>
+        <a href="/#contact" class="px-8 py-4 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition-colors">
+          Schedule Online
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema -->
+  <script type="application/ld+json" slot="head">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Product",
+      "name": "Dual Tank Water Softener",
+      "description": "Twin tank water softener for well water and large homes in Raleigh NC",
+      "brand": {
+        "@type": "Brand",
+        "name": "Raleigh Water Solutions"
+      },
+      "offers": {
+        "@type": "Offer",
+        "availability": "https://schema.org/InStock",
+        "priceCurrency": "USD",
+        "seller": {
+          "@type": "LocalBusiness",
+          "name": "Raleigh Water Solutions"
+        }
+      }
+    })}
+  </script>
+
+  <Footer />
+</Layout>

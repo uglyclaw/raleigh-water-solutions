@@ -1,0 +1,280 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import Navbar from '../../components/Navbar.astro';
+import Footer from '../../components/Footer.astro';
+
+const contaminants = [
+  { name: 'Iron', level: 'Up to 15 ppm', effect: 'Rust stains, metallic taste' },
+  { name: 'Sulfur', level: 'Up to 5 ppm', effect: 'Rotten egg smell' },
+  { name: 'Sediment', level: 'Various', effect: 'Cloudy water, clogged fixtures' },
+  { name: 'Hardness', level: '15+ gpg', effect: 'Scale buildup, dry skin' },
+  { name: 'Manganese', level: 'Up to 5 ppm', effect: 'Black staining' },
+  { name: 'Bacteria', level: 'Various', effect: 'Health concerns' },
+];
+
+const solutions = [
+  {
+    name: 'Iron & Sulfur Filter',
+    description: 'Air injection oxidation system removes iron, sulfur, and manganese without chemicals.',
+    features: ['Removes up to 15 ppm iron', 'Eliminates sulfur smell', 'No chemicals needed', 'Automatic backwash'],
+  },
+  {
+    name: 'Sediment Filtration',
+    description: 'Multi-stage filtration removes sand, silt, rust, and debris before it enters your home.',
+    features: ['20" big blue housing', '5-micron filtration', 'High flow rate', 'Easy filter changes'],
+  },
+  {
+    name: 'UV Sterilization',
+    description: 'Ultraviolet light eliminates bacteria, viruses, and microorganisms for safe drinking water.',
+    features: ['99.99% bacteria removal', 'Chemical-free', 'NSF certified', 'Annual bulb replacement'],
+  },
+  {
+    name: 'Dual Tank Softener',
+    description: 'Handles extreme hardness and iron with continuous soft water supply.',
+    features: ['80,000 grain capacity', 'Iron-resistant resin', '24/7 soft water', '5-year warranty'],
+  },
+];
+
+const warningSigns = [
+  { sign: 'Rust stains on fixtures and laundry', indicates: 'High iron content' },
+  { sign: 'Rotten egg smell from taps', indicates: 'Hydrogen sulfide (sulfur)' },
+  { sign: 'White scale on fixtures', indicates: 'Hard water minerals' },
+  { sign: 'Cloudy or discolored water', indicates: 'Sediment and turbidity' },
+  { sign: 'Black slimy buildup', indicates: 'Manganese and bacteria' },
+  { sign: 'Gritty feeling after showering', indicates: 'Hard water + sediment' },
+];
+---
+
+<Layout
+  title="Well Water Filtration Raleigh | Well Water Softener & Treatment NC"
+  description="Complete well water filtration systems for Raleigh. Remove iron, sulfur, sediment, and bacteria. Custom well water solutions with free water testing."
+>
+  <Navbar />
+
+  <!-- Hero -->
+  <section class="pt-32 pb-20 bg-gradient-to-br from-primary to-secondary">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <span class="inline-block bg-white/20 text-white text-sm font-medium px-4 py-1 rounded-full mb-4">Well Water Specialists</span>
+          <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-6">
+            Well Water
+            <span class="text-accent">Treatment Systems</span>
+          </h1>
+          <p class="text-xl text-white/90 mb-8">
+            Custom solutions for Triangle well water. Remove iron, sulfur, sediment,
+            hardness, and bacteria. Get clean, safe water from your well.
+          </p>
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="#contact" class="btn-primary bg-white text-primary hover:bg-gray-100">
+              Free Well Water Test
+            </a>
+            <a href="tel:+19195551234" class="px-8 py-4 border-2 border-white text-white font-semibold rounded-lg hover:bg-white/10 transition-colors text-center">
+              Call (919) 555-0123
+            </a>
+          </div>
+        </div>
+        <div class="bg-white/10 backdrop-blur-sm rounded-3xl p-8 border border-white/20">
+          <img src="/images/products/complete-home-system.png" alt="Well Water Treatment System" class="w-full max-w-xs mx-auto mb-4 rounded-xl" />
+          <div class="text-center">
+            <div class="text-white text-lg mb-2">Complete Well Treatment</div>
+            <div class="text-accent text-3xl font-bold">Custom Solutions</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Common Contaminants -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Common Triangle
+          <span class="gradient-text">Well Water Issues</span>
+        </h2>
+        <p class="text-lg text-gray-600">
+          Well water in the Raleigh area commonly contains these contaminants. We test for them all.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {contaminants.map((item) => (
+          <div class="bg-gray-50 rounded-xl p-6">
+            <h3 class="text-xl font-bold text-gray-900 mb-2">{item.name}</h3>
+            <p class="text-sm text-gray-500 mb-1">Treatable up to: <span class="font-semibold text-primary">{item.level}</span></p>
+            <p class="text-gray-600 text-sm">{item.effect}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Warning Signs -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+        <div>
+          <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-6">
+            Signs You Need Well Water Treatment
+          </h2>
+          <p class="text-gray-600 mb-8">
+            If you notice any of these issues, your well water needs professional treatment.
+            We offer free comprehensive water testing.
+          </p>
+
+          <div class="space-y-4">
+            {warningSigns.map((item) => (
+              <div class="flex items-start gap-4 bg-white rounded-xl p-4 shadow-sm">
+                <div class="w-2 h-2 bg-red-500 rounded-full mt-2 flex-shrink-0"></div>
+                <div>
+                  <p class="font-medium text-gray-900">{item.sign}</p>
+                  <p class="text-sm text-gray-500">Indicates: {item.indicates}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl p-8 shadow-xl">
+          <h3 class="text-2xl font-bold text-gray-900 mb-6 text-center">Free Well Water Test</h3>
+          <ul class="space-y-3 mb-8">
+            <li class="flex items-center gap-2 text-gray-700">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Iron & sulfur levels
+            </li>
+            <li class="flex items-center gap-2 text-gray-700">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Hardness & pH
+            </li>
+            <li class="flex items-center gap-2 text-gray-700">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Sediment & turbidity
+            </li>
+            <li class="flex items-center gap-2 text-gray-700">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Bacteria testing
+            </li>
+            <li class="flex items-center gap-2 text-gray-700">
+              <svg class="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/></svg>
+              Same-day results
+            </li>
+          </ul>
+          <a href="tel:+19195551234" class="btn-primary w-full text-center block">
+            Schedule Free Test
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Solutions -->
+  <section class="py-20 bg-white">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Our Well Water
+          <span class="gradient-text">Solutions</span>
+        </h2>
+        <p class="text-lg text-gray-600">
+          Custom systems designed for your specific well water problems.
+          We combine the right technologies for your water.
+        </p>
+      </div>
+
+      <div class="grid md:grid-cols-2 gap-8">
+        {solutions.map((solution) => (
+          <div class="bg-gray-50 rounded-2xl p-8">
+            <h3 class="text-2xl font-bold text-gray-900 mb-2">{solution.name}</h3>
+            <p class="text-gray-600 mb-4">{solution.description}</p>
+            <ul class="space-y-2">
+              {solution.features.map((feature) => (
+                <li class="flex items-center gap-2 text-gray-700 text-sm">
+                  <svg class="w-4 h-4 text-green-500 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+                    <path fill-rule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clip-rule="evenodd"/>
+                  </svg>
+                  {feature}
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Process -->
+  <section class="py-20 bg-gray-50">
+    <div class="max-w-7xl mx-auto container-padding">
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+          Our Well Water Treatment Process
+        </h2>
+      </div>
+
+      <div class="grid md:grid-cols-4 gap-6">
+        <div class="text-center">
+          <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-4">1</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Free Test</h3>
+          <p class="text-gray-600 text-sm">We test your well water for iron, sulfur, hardness, bacteria, and more.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-4">2</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Custom Design</h3>
+          <p class="text-gray-600 text-sm">We design a system specifically for your water's unique challenges.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-4">3</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Installation</h3>
+          <p class="text-gray-600 text-sm">Professional installation with minimal disruption to your home.</p>
+        </div>
+
+        <div class="text-center">
+          <div class="w-20 h-20 bg-primary rounded-full flex items-center justify-center text-white text-3xl mx-auto mb-4">4</div>
+          <h3 class="text-xl font-bold text-gray-900 mb-2">Support</h3>
+          <p class="text-gray-600 text-sm">Ongoing maintenance, filter changes, and 5-year warranty support.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section id="contact" class="py-20 bg-primary">
+    <div class="max-w-4xl mx-auto container-padding text-center">
+      <h2 class="text-3xl md:text-4xl font-bold text-white mb-4">
+        Get Clean Well Water Today
+      </h2>
+      <p class="text-xl text-white/90 mb-8">
+        Schedule your free well water test and discover the perfect solution for your home.
+      </p>
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <a href="tel:+19195551234" class="px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-gray-100 transition-colors">
+          Call (919) 555-0123
+        </a>
+        <a href="/#contact" class="px-8 py-4 bg-white/20 text-white font-semibold rounded-lg hover:bg-white/30 transition-colors">
+          Schedule Online
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Schema -->
+  <script type="application/ld+json" slot="head">
+    {JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "Well Water Treatment",
+      "description": "Well water filtration and treatment services in Raleigh NC",
+      "provider": {
+        "@type": "LocalBusiness",
+        "name": "Raleigh Water Solutions",
+        "areaServed": "Raleigh, Durham, Chapel Hill, Cary, Apex"
+      },
+      "serviceType": "Well Water Filtration"
+    })}
+  </script>
+
+  <Footer />
+</Layout>

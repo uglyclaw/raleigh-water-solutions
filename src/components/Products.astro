@@ -16,6 +16,7 @@ const products = [
       '5-year warranty',
     ],
     color: 'primary',
+    href: '/products/complete-home-system',
   },
   {
     name: 'Water Softener Pro',
@@ -33,6 +34,7 @@ const products = [
       '10-year warranty',
     ],
     color: 'secondary',
+    href: '/products/water-softener-pro',
   },
   {
     name: 'Reverse Osmosis System',
@@ -50,6 +52,7 @@ const products = [
       '5-year warranty',
     ],
     color: 'accent',
+    href: '/products/reverse-osmosis',
   },
   {
     name: 'Pre-Sediment Filter',
@@ -67,6 +70,7 @@ const products = [
       '1-year warranty',
     ],
     color: 'dark',
+    href: '/products/pre-sediment-filter',
   },
 ];
 ---
@@ -86,7 +90,7 @@ const products = [
 
     <div class="grid lg:grid-cols-2 gap-8">
       {products.map((product) => (
-        <div class={`relative bg-white rounded-2xl p-8 shadow-lg border-2 ${product.badge ? 'border-primary shadow-primary/10' : 'border-gray-100'} hover:border-primary hover:shadow-xl transition-all duration-300`}>
+        <a href={product.href} class={`group relative bg-white rounded-2xl p-8 shadow-lg border-2 ${product.badge ? 'border-primary shadow-primary/10' : 'border-gray-100'} hover:border-primary hover:shadow-xl transition-all duration-300 block`}>
           {product.badge && (
             <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-primary text-white text-sm font-semibold px-4 py-1 rounded-full">
               {product.badge}
@@ -96,7 +100,7 @@ const products = [
           <div class="flex flex-col md:flex-row md:items-start gap-6">
             <!-- Product Image -->
             <div class="w-full md:w-48 flex-shrink-0">
-              <img src={product.image} alt={product.name} class="w-full h-auto rounded-xl" />
+              <img src={product.image} alt={product.name} class="w-full h-auto rounded-xl group-hover:scale-105 transition-transform duration-300" loading="lazy" />
             </div>
 
             <!-- Product Info -->
@@ -126,24 +130,16 @@ const products = [
                 Save up to {Math.round((1 - product.price/product.originalPrice) * 100)}%
               </div>
               <div class="text-sm text-gray-500 mb-4">Professional Installation Included</div>
-              <a
-                href={`/products/${product.name.toLowerCase().replace(/\s+/g, '-')}`}
-                class="text-primary font-semibold hover:text-primary-dark transition-colors flex items-center gap-1 mb-2"
-              >
+              <span class="text-primary font-semibold group-hover:text-primary-dark transition-colors flex items-center gap-1 mb-2">
                 Learn More
-                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/>
                 </svg>
-              </a>
-              <a
-                href="#contact"
-                class="btn-primary w-full md:w-auto text-center"
-              >
-                Get Free Quote
-              </a>
+              </span>
+              <span class="btn-primary w-full md:w-auto text-center">Get Free Quote</span>
             </div>
           </div>
-        </div>
+        </a>
       ))}
     </div>
 
